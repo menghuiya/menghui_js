@@ -1,0 +1,123 @@
+body{
+    background-color:rgb(246, 246, 246);
+}
+header{
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    color:rgb(26, 26, 26);
+    height:50px;
+}
+
+.inner{
+	width: 1000px;
+	background: red;
+    /*margin:0 160px 0 160px;*/ /*修改前*/
+   margin: auto;
+}
+
+nav{
+   /* position: relative;*/
+    display: flex;
+    width: 1000px;
+    margin: auto;
+    /*background: red;*/
+}
+nav .logo{
+	margin-top: 12px;
+}
+nav ul{
+    margin:16px 0 16px 0;
+}
+
+nav li{
+    display:inline-block;
+    padding: 0 15px 0 15px;
+    text-align: left;
+    font-size: 15px;
+    color: #444;
+    font-weight: 600;
+    margin: auto;
+}
+
+nav a{
+    color:rgb(68,68,68);
+    cursor:pointer;
+    text-decoration-line: none;
+    text-decoration-color: rgb(68,68,68);
+    text-decoration-style: solid;
+    text-align: center;
+    line-height: 22px;
+    position: relative;
+    padding: 14px 0 14px 0;
+}
+.shuruk{
+	width: 320px;
+	height: 34px;
+	margin: 5px 0 0 25px;
+	background: #F6F6F6;
+	border:1px solid #EBEBEB;
+	border-radius: 3px 3px 3px 3px;
+	color: #99A2B4;
+}
+.selected:after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 3px;
+    background: #0084ff;
+    content: "";
+}
+
+main{
+    display:block;
+}
+.container{
+    margin:10px 160px 10px 160px;
+    display:-webkit-box;
+}
+
+.maincontent{
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    margin-right: 10px;
+    background-color: #fff;
+    width: 70%;
+}
+
+aside{
+    box-shadow: 0 1px 3px rgba(26,26,26,.1);
+    background-color: #fff;
+    width:30%;
+}
+
+nav.innernav{
+    border-bottom-color:rgb(240, 242, 247);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    height:58px;
+}
+
+.innernav a{
+    margin:0 22px 0 22px;
+    font-size: 16px;
+}
+
+.card{
+    height:120px;
+    padding:20px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color:rgb(240, 242, 247);
+}
+
+.card h2{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+aside{
+    display: block;
+    height: 600px;
+    background-color: #fff;
+}
+

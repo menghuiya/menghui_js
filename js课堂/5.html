@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>输出三角形</title>
+	</head>
+	<style type="text/css">
+			.shuru{
+				margin: auto;
+				border: 1px solid dodgerblue;
+				width: 800px;
+				height: 300px;
+				text-align: center;
+				border-radius: 10px 10px 10px 10px;
+			}
+			.top_shuru{
+				border: 1px solid darkgrey;
+				background: linear-gradient(to right,#8ae68a,#5ccdde,#b221ff);
+				margin: 5px 5px 5px 5px;
+				border-radius: 2px 2px 2px 2px;
+			}
+			#shuchu{
+				margin: auto;
+				width: 790px;
+				height: 250px;
+				border: 1px solid #A9A9A9;
+				border-radius: 5px 5px 5px 5px;
+				background: linear-gradient(to left,#8ae68a,#5ccdde,#b221ff);
+				color: white;
+				text-align: left;
+				line-height: 18px;
+				overflow: auto;
+			}
+		</style>
+		<script type="text/javascript">
+			function kaiShiZhiZuo(){
+				var n=document.getElementById("cengshu").value;
+				var m=document.getElementById("zifu").value;
+				for(var i=0;i<n;i++){
+		            for(var j=n;j>i;j--){
+		               document.write("&ensp;");		              
+		            }
+		            for(var k=0;k<2*i+1;k++){
+		               document.write(m);
+		            }
+		            document.write("</br>") 
+	           }
+		}
+		</script>
+	<body>
+		<div class="shuru">
+			<div class="top_shuru">
+				请输入层数：<input id="cengshu" type="text" />
+		                        请输入形状或字符：<input id="zifu" type="text" />
+		        <input type="button" name="kaishi" id="kaishi" onclick="kaiShiZhiZuo()" value="开始制作" />
+		        <input type="button" name="qingchu" id="qingchu" onclick="qingChuJs()" value="清除内容" />
+			</div>
+		    <div id="shuchu">		    	
+		    </div>
+		</div>
+	</body>
+	</body>
+</html>
