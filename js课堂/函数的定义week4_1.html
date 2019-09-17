@@ -67,7 +67,28 @@
         console.log(add(1, 2, 3, 4, 5));
         console.log(add(1, 2, 3, 4, 5, 6));
         console.log(add(1, 2, 3, 4, 5, 6, 7));
+    
+    //回调函数
+    function handleNames(callback){
+            var names=['tom','jerry','micky','goaph','atom'];
+            var r=callback(names);
+            console.log(r);
+        }
 
+        function getLen(arr){
+            return arr.length;  
+        }
+        handleNames(getLen);
+        function sortArr(arr){
+          return arr.sort();
+        }
+        handleNames(sortArr);
+        handleNames(function(arr){
+            for (var i=0;i<arr.length;i++){
+                var name=arr[i];
+                console.log(name,name.length)
+            }
+        })
     </script>
 </body>
 
