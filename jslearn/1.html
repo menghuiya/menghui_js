@@ -33,12 +33,22 @@
                 break;
         } 
     </script>-->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
     	for(var i=0,j=10;i!=j;i++,j--){
     		console.log(i,j)
     	}
     	console.log(i,j)
-    </script> 
+    </script> -->
+    <script type="text/javascript">
+    	var scope="global";
+		function checkscope(){
+		  var scope="local";
+		  return scope;
+		}
+		console.log(checkscope());
+		console.log(scope);
+
+    </script>
 </body>
 
 </html> 
