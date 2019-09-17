@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+</head>
+
+<body>
+    <!-- <input id="mh_1" type="button" value="冉志诚日龙宝">
+    <input onclick="HuAN()" type="button" value="clik"> -->
+    <script>
+
+        // function HuAN() {
+        //     var a = document.getElementById("mh_1");
+        //     a.value = "冉志诚真的是一个汉堡";
+        // }
+
+        // f1();
+        //   function f1(){
+        //       cosole.log("HOLLO WORLD")；
+        //   }
+
+        //   var function fn(){
+        //       console.log
+        //   }
+        //IIFE(立即执行函数)
+        // (function () {
+        //     console.log("hello boy!");
+        // })();
+        // (function (name) {
+        //     // var age=100;
+        //     // console.log("hello "+name+",your age:"+age);
+        //     for(var i=0;i<10;i++){   //局部作用域
+        //         console.log(i)
+        //     }
+        // })("MENGHUI");
+        // console.log(i)
+
+        //默认参数，ES6扩展
+        function multiply(a = 1, b = 10) {
+            console.log(a * b);
+
+        }
+        multiply(5, 2);
+        multiply(5, undefined);
+        //ES5的算法
+        function add(a, d) {
+            if (!a || !b) return 0;
+            return a + b;
+        }
+        console.log(add())
+        // argument
+        function add() {
+            var r = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                r += arguments[i];
+
+            }
+            return r;
+        }
+        console.log(add(1, 2));
+        console.log(add(1, 2, 3));
+        console.log(add(1, 2, 3, 4));
+        console.log(add(1, 2, 3, 4, 5));
+        console.log(add(1, 2, 3, 4, 5, 6));
+        console.log(add(1, 2, 3, 4, 5, 6, 7));
+    
+    //回调函数
+    function handleNames(callback){
+            var names=['tom','jerry','micky','goaph','atom'];
+            var r=callback(names);
+            console.log(r);
+        }
+
+        function getLen(arr){
+            return arr.length;  
+        }
+        handleNames(getLen);
+        function sortArr(arr){
+          return arr.sort();
+        }
+        handleNames(sortArr);
+        handleNames(function(arr){
+            for (var i=0;i<arr.length;i++){
+                var name=arr[i];
+                console.log(name,name.length)
+            }
+        })
+    </script>
+</body>
+
+</html>

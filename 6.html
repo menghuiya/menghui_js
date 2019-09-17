@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 100;
+
+        function f1() {
+            var num = 1000;
+            console.log(this.num);
+        }
+        console.log(f1()); //this绑定到全局对象
+
+
+        function foo() {
+            console.log(this.a);
+        }
+
+        var a = 2;
+        var obj = {
+            a: 3,
+            foo: foo
+        };
+        obj.foo();//绑定到obj对象调用
+    </script>
+</body>
+
+</html>
