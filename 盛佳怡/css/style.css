@@ -1,0 +1,218 @@
+.syj_header{
+	height:100px ;
+	background-color: #F2F2F2;
+	
+}
+#sjy_header1{
+	width: 1200px;
+	height: 90px;
+	margin: auto;
+	padding-top: 10px;
+}
+.syj_header_logo{
+	width: 220px;
+	float: left;
+}
+.sjy_header_login{
+	line-height: 84px;
+	float: right;
+	width: 200px;
+}
+.sjy_phone{
+	width: 9px;
+	height: 20px;
+	margin-right: 3px;
+}
+.sjy_header_login>a{
+	margin-right: 24px;
+	text-decoration: none;
+	color: black;
+}
+.syj_main{
+	margin-top: 40px;
+	height: 900px;
+	background: url(../img/sjy_bg.png)no-repeat bottom;
+}
+/*//设置快捷左右浮动,可以直接引用*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.syj_mains{
+	width: 910px;
+	margin: auto;
+}
+#syj_regist{
+	width: 500px;
+	height: 700px;
+	border-right:1px solid #E7EAED;
+}
+.sjy_login_rimg{
+	width: 320px;
+}
+.syj_regist >p{
+	font-size: 18px;
+}
+.sjy_icons1{
+	position:absolute;
+	background-image: url(../img/sjy_usericon.png);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width: 19px;
+	height: 24px;
+	margin: 28px 15px 0 12px;
+}
+#sjy_username{
+	width: 355px;
+	height: 55px;
+	border:2px solid #E7EAED;
+	border-radius: 3px;
+	padding-left: 45px;
+	font-size: 18px;
+	margin-top: 10px;
+}
+.sjy_icons2{
+	position:absolute;
+	background-image: url(../img/sjy_phonenumicon.png);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width: 19px;
+	height: 24px;
+	margin: 50px 15px 0 12px;
+}
+#sjy_usephonenum{
+	width: 355px;
+	height: 55px;
+	border:2px solid #E7EAED;
+	border-radius: 3px;
+	padding-left: 45px;
+	font-size: 18px;
+	margin-top: 32px;
+}
+.sjy_icons3{
+	position:absolute;
+	background-image: url(../img/sjy_imgcoadnum.png);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width: 19px;
+	height: 24px;
+	margin: 50px 15px 0 12px;
+}
+#sjy_imgcoadnum{
+	width: 195px;
+	height: 55px;
+	border:2px solid #E7EAED;
+	border-radius: 3px;
+	padding-left: 45px;
+	font-size: 18px;
+	margin-top: 32px;
+}
+#sjy_imgcoadnumimg{
+	width: 125px;
+	height: 55px;
+	margin-left: 29px;
+	border: 1px solid #41C7DB;
+	border-radius: 4px;
+	background: url(../img/syj_coadimg.png) no-repeat;
+	background-size:100% 100%;
+}
+.sjy_icons4{
+	position:absolute;
+	background-image: url(../img/sjy_phonecoadnum.png);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width: 19px;
+	height: 24px;
+	margin: 50px 15px 0 12px;
+}
+#sjy_phonecoadnum{
+	width: 195px;
+	height: 55px;
+	border:2px solid #E7EAED;
+	border-radius: 3px;
+	padding-left: 45px;
+	font-size: 18px;
+	margin-top: 32px;
+}
+#sjy_phonecoadbtn{
+	width: 125px;
+	height: 60px;
+	margin-left: 29px;
+	border: 1px solid #41C7DB;
+	border-radius: 4px;
+	background: transparent;
+	color: #41C7DB;
+	font-size: 16px;
+}
+.sjy_icons5{
+	position:absolute;
+	background-image: url(../img/sjy_pasword.png);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width: 20px;
+	height: 24px;
+	margin: 50px 15px 0 12px;
+}
+#sjy_password{
+	width: 355px;
+	height: 55px;
+	border:2px solid #E7EAED;
+	border-radius: 3px;
+	padding-left: 45px;
+	font-size: 18px;
+	margin-top: 32px;
+}
+#sjy_passwordrf{
+	width: 355px;
+	height: 55px;
+	border:2px solid #E7EAED;
+	border-radius: 3px;
+	padding-left: 45px;
+	font-size: 18px;
+	margin-top: 32px;
+}
+.sjy_icons6{
+	position:absolute;
+	background-image: url(../img/sjy_invitecoad.png);
+	background-repeat: no-repeat;
+	background-position:0px 0px;
+	width: 20px;
+	height: 24px;
+	margin: 50px 15px 0 12px;
+}
+#sjy_invitecoad{
+	width: 355px;
+	height: 55px;
+	border:2px solid #E7EAED;
+	border-radius: 3px;
+	padding-left: 45px;
+	font-size: 18px;
+	margin-top: 32px;
+}
+.sjy_formbtn{
+	background-color: #00A8D4;
+	color: white;
+	width: 403px;
+	height: 55px;
+	margin-top: 35px;
+	border: 1px solid #00A8D4;
+	border-radius: 5px;
+	font-size: 20px;
+}
+.sjy_fuwutk{
+	font-size: 14px;
+	margin-top: 20px;
+}
+.sjy_fuwutk>a{
+	color: #00A8D4;
+	text-decoration: none;
+}
+.sjy_yiyoulogin{
+	margin-left: 60px;
+}
+.sjy_yiyoulogin >a{
+	text-decoration: none;
+	color: #00A8D4;
+}

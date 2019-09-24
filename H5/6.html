@@ -7,6 +7,32 @@
 	<title>Document</title>
 </head>
 <body>
-	
+	<input type="radio" name="12345" id="12345" onclick="jhsn()" value="" />
+	<input type="radio" name="12345" id="123456" onclick="jhsn()" value="" />
+	<script type="text/javascript">
+		function jhsn(){
+			var a=document.getElementById("12345").checked
+			if (a==true){
+				alert("恭喜你选中了")
+			}else{
+				alert("您放弃了选中")
+			}
+		}
+	</script>
+	<input type="radio" name="mh_yhlx" id="mh_jhzh" onclick="mhJhzh()" value="" checked="true"  />建行账号
+							<input type="radio" name="mh_yhlx" id="mh_jhqb" onclick="mhJhzh()" value="" />建行钱包账号
+							<script>
+								function mhJhzh(){
+										var mhxzzh=document.getElementById("mh_jhzh").checked;
+									    //var b=document.getElementById("mh_qbzh").checked;
+										var c=document.getElementById("mh_zhuce_gerenzc");
+										var d=document.getElementById("mh_zhuce_zhanghaozc");
+										if (mhxzzh==true){
+											alert("恭喜你选中了")
+										}else{
+											alert("您放弃了选中")
+										}
+									}
+							</script>
 </body>
 </html>
