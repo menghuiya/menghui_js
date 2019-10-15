@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper {
+        width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .Text-Advertising {
+        position: relative;
+        width: 100%;
+        margin: 6px 0 -15px;
+        clear: both;
+        background: #fff;
+        padding: 8px 0;
+        overflow: hidden;
+        background: repeating-linear-gradient(135deg, transparent, transparent 3px, #bbb 3px, #ff0 8px);
+        animation: shine 1s infinite linear;
+    }
+
+    .Text-Advertising:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        background: #fff;
+        z-index: 0;
+    }
+
+    @keyframes shine {
+        100% {
+            background-position: -12px -12px;
+        }
+    }
+
+    .Text-Advertising:before {
+        content: "";
+        position: absolute;
+        left: -200%;
+        width: 300%;
+        height: 50px;
+        background-image: linear-gradient(0, transparent 20%, rgba(255, 255, 255, .4) 50%, transparent 80%);
+        background-color: rgba(255, 255, 255, .4);
+        transform: rotate(-60deg);
+        animation: searchLights 3s ease-in 3s infinite;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    .Text-Advertising ul {
+        position: relative;
+        float: left;
+        width: 20%;
+        z-index: 2;
+    }
+
+    /* ol,ul {
+        list-style: none;
+    } */
+
+    .Text-Advertising ul {
+        display: block;
+        /* list-style-type: disc; */
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 0px;
+    }
+
+    .guangshu {
+        display: block;
+        position: relative;
+        width: 800px;
+        height: 450px;
+        margin: 0 auto;
+    }
+
+    .guangshu:before {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 100%;
+        top: 0;
+        left: -150px;
+        overflow: hidden;
+        background: -moz-linear-gradient(left, rgba(255, 255, 255, 0)0, rgba(255, 255, 255, .2)50%, rgba(255, 255, 255, 0)100%);
+        background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, .2)), color-stop(100%, rgba(255, 255, 255, 0)));
+        background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0)0, rgba(255, 255, 255, .2)50%, rgba(255, 255, 255, 0)100%);
+        background: -o-linear-gradient(left, rgba(255, 255, 255, 0)0, rgba(255, 255, 255, .2)50%, rgba(255, 255, 255, 0)100%);
+        -webkit-transform: skewX(-25deg);
+        -moz-transform: skewX(-25deg)
+    }
+
+    .guangshu:hover:before {
+        left: 150%;
+        transition: left 1s ease 0s;
+    }
+    @keyframes searchLights{0% {left:-200%;top:0} to{left:100%;top:100px}}
+@media only screen and (max-width: 1100px) {	.top_ad {display: none;}	.wrapper-outer,.wrapper{width:100%;} 	.header{width:96%;padding:20px 2% 10px} 	.t-fr{padding-right:1.5%} 	.navbg,.navbar{height:32px;width:100%;background:#333;}	#navul li{font-size:12px !important} 	#navul li ul{top:31px} 	.con-left{float:none;width:96%;margin:0 auto} 	#iautobox{position:relative;padding-top:5px} 	#iautobox .rtpic{display:block;position:absolute;top:0;left:0;width:100%;height:160px;overflow:hidden;} 	.cmsbox,.art-content{width:100%;} 	.pull-left{width:100%;height:32px;line-height:32px;} 	.cmslist{width:48%;margin:0 1% 8px;} .newadd { width: 96%; overflow: hidden; }.newadd li {width: 48%; }.newadd li:nth-child(2n) {float: right}.articleCon li .thumb{width:22%;overflow:hidden} .articleCon li .mark{width:76%} .atlist li .mark{width:98%;} .t-fl,.pull-right,.mail-box,.ad-box,.rtpic,.rtpic .xyti,#sidebar,.ibtad,.span-c{display:none} .rtpic ul{width:96%;margin:0 auto;} .rtpic li{width:23%;height:140px;margin:20px 1% 0} .frend-link{padding:0 2%} .footer .col div.span-a{float:none;width:auto;padding:0 20px}.index-top .con-left{width:100%;}.index-top .con-right{float:none;width:100%;margin-top:15px;}.index-top .cmslist{width:47%;margin:0 1.5% 8px;}.icmstop{width:97%;margin:0 auto;}#iautobox .icmstop .rtpic{position:static;height:auto;}.icmstop .rtpic .xyti{display:block;}.icmstop .rtpic li{width:160px;height:120px;margin:20px 5px;}}
+@media only screen and (max-width: 650px) {	.top_ad, .yx-rotaion, .Text-Advertising {display: none;}	.newadd { width: 96%; overflow: hidden; }	.newadd li {width: 48%; }	.rtpic li{width:48%;height:140px;margin:20px 1% 0} 	.navbar{height:0;border-bottom:2px #ccc solid;background:none;box-shadow:0 3px 3px #eee;} 	.pull-left,.navbg{height:0} 	#navul{position:absolute;top:0;left:0;height:0;background:url(../images/mobile_nav.gif) 20px 5px no-repeat;padding-top:30px;overflow:hidden;cursor:pointer;z-index:999} 	.nulht{height:auto !important;overflow:visible !important} 	#navul li{float:none;border-bottom:1px #444 dotted;background:#333;} 	#navul li ul{top:0;left:90px} 	.cmslist{width:98%;margin: 0 1% 8px;} 	.newadd { width:98%;margin: 0 1% 8px; }	.newadd li {width: 100%; }	.newadd li:nth-child(2n) {margin-left:0;}	.search-fr,.articleCon li .thumb,.tip-bar,.positionbar,.logbtad,#code,#code_img,#gotop{display:none !important} .articleCon li .mark{width:100%;padding-bottom:10px} #tw .tpost{width:78%;}.index-top .cmslist{width:97%;margin:0 1.5% 8px;}.indexnew .cmslist.newadd{margin:0;}.indexnew .newadd li{width:97%;}.icmstop{margin-bottom:5px;}.icmstop .bk20{display:none;}}
+
+</style>
+
+<body>
+    <div class="wrapper">
+
+        <!---NO.1- 10\20到期---->
+
+        <div class="Text-Advertising">
+            <ul class="list-unstyled">
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#33CC00">高流量文字广告位招租啦
+                        </span><span style="color:#FF0033"></span></a></li>
+                <!---10\23到期---->
+                <li><a href="# " rel="nofollow" target="_blank"><span style="color:#6600FF">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#3366FF">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+
+            </ul>
+
+            <!----第2列---10月1--->
+
+            <ul class="list-unstyled">
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+
+            </ul>
+
+            <!----第3列---10月1--->
+
+            <ul class="list-unstyled">
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+
+
+            </ul>
+
+            <!----第4列-- 9月21-->
+
+            <ul class="list-unstyled">
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+
+            </ul>
+
+            <!----第5列--- 9月28--->
+
+            <ul class="list-unstyled">
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+                <li><a href="#" rel="nofollow" target="_blank"><span style="color:#FF0033">高流量文字广告位招租啦</span><span
+                            style="color:#FF0033"></span></a></li>
+                <!---10\8到期---->
+
+
+            </ul>
+
+
+        </div>
+    </div>
+
+    <a href="#" class="guangshu"><img src="http://www.zzdgzs.cn/13.png"></a>
+</body>
+
+</html>

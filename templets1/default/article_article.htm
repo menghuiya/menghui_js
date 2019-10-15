@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset={dede:global.cfg_soft_lang/}"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>{dede:field.title/} - {dede:global.cfg_ming/}</title>
+<meta name="keywords" content="{dede:field.keywords/}"/>
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}"/>
+<link href="/skin/css/krnet.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="/skin/css/layui.css">
+<link rel="stylesheet" type="text/css" href="/skin/css/highslide.css">
+<script src="//apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/skin/js/highslid.js"></script>
+<script src="/skin/js/enlarge.js"></script>
+<script src="/skin/js/tiao.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("/m/view.php?aid={dede:field.id/}");</script>
+</head>
+<body class="single">
+{dede:include filename="header.htm"/}
+<div class="tounavad">
+</div>
+<div class="wrapper">
+	<div class="artcontent left">
+		<div class="topcontent publicborder">
+			<div class="current_nav">
+				<span class="layui-breadcrumb">{dede:field name='position'/}</span>
+			</div>
+			<div class="post_title">
+				<h1>{dede:field.title/}</h1>
+				<span class="source"><i class="iconfont icon-laiyuan1"></i>{dede:field.source/}</span>
+				<span class="time"><i class="iconfont icon-shijian"></i>{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</span>
+				<span class="browse"><i class="iconfont icon-liulan"></i>
+				<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}"type='text/javascript' language="javascript"></script>
+				</span>
+				<span class="comment"><i class="iconfont icon-pinglun"></i><a href="#commentDiv" style="color:#888;"><span id="changyan_count_unit">0</span>条评论</a></span>
+			</div>
+			<div class="post_content">
+			{dede:field.body/}
+			</div>
+			<div class="hot_tags">
+				<span>本文标签：{dede:field.id runphp='yes'} global $cfg_cmspath; $tags = GetTags(@me); $revalue = ''; $tags = explode(',', $tags); foreach($tags as $key => $value){ if($value){ $revalue .= ' <a href="'.$cfg_cmspath.'/tags.php?/'.$value.'/">'.$value.'</a>, '; } } @me = substr($revalue,0,-2); {/dede:field.id}</span>
+				<div style="float:right;height:36px;">
+					<div class="bdsharebuttonbox bdshare-button-style1-24" data-bd-bind="1503232607376">
+						<a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+					</div>
+					<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+				</div>
+			</div>
+		</div>
+		<div class="xiangguan publicborder">
+			<div class="publictitle">
+				<i></i><span>相关文章</span>
+			</div>
+			<ul class="list_1">
+			{dede:likearticle row='8'titlelen='80'}
+				<li><a target="_blank" href="[field:arcurl/]" title="[field:fulltitle/]">[field:title/]</a><span class="date">[field:pubdate function="MyDate('m.d',@me)"/]</li>
+			{/dede:likearticle}
+			</ul>
+		</div>
+		<div class="goodlook publicborder">
+			<div class="publictitle">
+				<i></i><span>更多精彩</span>
+			</div>
+			<ul class="list_2">
+			{dede:arclist row='7'titlelen='80' orderby ='rand'}
+				<li><a target="_blank" href="[field:arcurl/]" title="[field:fulltitle/]">
+					<span><img src="[field:picname/]" alt="[field:title/]" title="[field:title/]"/></span>
+					<p>[field:title/]</p>
+				</a></li>
+			{/dede:arclist}
+           <li><script src='/plus/ad_js.php?aid=34' language='javascript'></script></li>
+			</ul>
+		</div>
+		<div class="pinglun publicborder">
+			<div class="sfotmao" id="commentDiv"></div>
+			<!--<div class="publictitle">
+				<i></i><span>评论留言</span>
+			</div>
+			<div style="width:800px;margin:auto;overflow:hidden;">
+		{dede:include filename="pinglun.htm"/}
+			</div>-->
+		</div>
+	</div>
+{dede:include filename="right.htm"/}
+</div>
+<script type="text/javascript" src="/skin/js/krnet.js"></script>
+{dede:include filename="footer.htm"/}
+</body>
+</html>

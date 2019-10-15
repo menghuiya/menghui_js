@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>loadStorage实现电话簿管理</title>
+    <style>
+
+            body {
+                width: 960px;
+                margin: auto;
+            }
+        </style>
+    <script>
+        //保存数据
+        function save(){
+            var phone=document.getElementById("phone").value ;
+            var user_name=document.getElementById("user_name").value;
+            if(phone.length>0&&user_name.length>0){
+                localStorage.setItem(user_name,phone);
+                alert("添加成功")
+            }else{
+                alert("请您检查输入的内容")
+            }
+            
+        }
+        //查找数据
+        function find(){
+            var search_name=document.getElementById("search_name").value;
+            var phone=localStorage.getItem(search_name);
+            var find_result=document.getElementById("find_result");
+            find_result.innerHTML=search_name+"的留言："+phone;
+        }
+        //将所有储存在localStorage中的对象提取出来，并显示到界面上
+        function loadAll(){
+            var list=document.getElementById("list");
+            if(localStorage.length>0){
+                var result="<table border='1'>";
+                result += "<tr><td>姓名</td><td>留言内容</td></tr>";
+                for(var i=0;i<localStorage.length;i++){
+                    var name=localStorage.key(i);
+                    var phone=localStorage.getItem(name);
+                    result+="<tr><td>"+name+"</td><td>"+phone+"</td></tr>";
+                }
+                result +="</table>";
+                list.innerHTML=result;
+            }else{
+                list.innerHTML="数据为空";
+            }
+        }
+        function clearStorage() {
+		localStorage.clear();
+		alert("数据清理完毕");
+		loadAll();
+	    }
+    </script>
+</head>
+<body>
+    <div style="border: 1px solid blue;width: 400px;text-align: center;padding: 5px">
+        <label for="user_name">姓名：</label>
+        <input type="text" name="user_name" id="user_name">
+        <br>
+        <label for="phone">留言内容：</label>
+        <textarea type="text" id="phone" style="width: 400px;height: 200px;"> </textarea>
+        <br>
+        <input type="button" onclick="save()" value="新增记录">
+        <input type="button" value="删除数据" onclick="clearStorage()" />
+        <hr>
+        <label for="search_name">输入姓名：</label>
+        <input type="text" name="search_name" id="search_name">
+        <br>
+        <input type="button" onclick="find()" value="查找信息">
+        <p id="find_result"></p>
+        <hr>
+        <input type="button" onclick="loadAll()" value="显示全部">
+    </div>
+    <div id="list"></div>
+</body>
+</html>

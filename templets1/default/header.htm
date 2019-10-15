@@ -1,0 +1,68 @@
+<div class="header">
+	<div class="nav">
+		<ul class="layui-nav">
+			<li class="layui-nav-item"><a href="{dede:global.cfg_basehost/}">网站首页</a></li>
+				 {dede:channelartlist typeid='top' currentstyle='layui-this'}
+			<li class="layui-nav-item {dede:field.currentstyle/}">
+			<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>
+			<dl class="{dede:php} $thisid = $refObj->
+				Fields['id'];
+$dsql->SetQuery('Select * from `dede_arctype` where reid='.$thisid.' ORDER BY sortrank');
+$dsql->Execute();
+$i=0;
+while($arr = $dsql->getArray()){
+$i = $i +1;
+$str = implode(',',$arr);
+    if(!empty($str) && $i==1){
+        echo 'layui-nav-child'; 
+    }	
+}
+if(empty($str)) echo 'nav-item nav-item-2';
+{/dede:php}">{dede:channel type='son' }
+				<dd><a href="[field:typelink/]">[field:typename/]</a></dd>
+					  {/dede:channel}
+			</dl>
+			</li>
+				 {/dede:channelartlist}
+         <!--<li class="layui-nav-item"><a href="http://q.krnet.cc" target="_blank">优惠券</a></li>-->
+		</ul>
+	</div>
+</div>
+<div class="wrap">
+<div class="top publicborder">
+	<div class="logo">
+		<a href="{dede:global.cfg_basehost/}"><img src="/skin/images/logo.png" alt="小黑屋资源网" title="小黑屋资源网"/></a>
+	</div>
+	<div class="col">
+      {dede:channelartlist typeid='32,55' row="2" }
+		<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>  
+	  {/dede:channelartlist}
+	</div>
+	<div class="col">
+      {dede:channelartlist typeid='24,26' row="2" }
+		<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>  
+	  {/dede:channelartlist}
+	</div>
+	<div class="col">
+      {dede:channelartlist typeid='47,41' row="2" }
+		<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>  
+	  {/dede:channelartlist}
+	</div>
+	<div class="col">
+      {dede:channelartlist typeid='50,30' row="2" }
+		<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>  
+	  {/dede:channelartlist}
+	</div>
+	<div class="col last">
+      {dede:channelartlist typeid='35,36' row="2" }
+		<a href="{dede:field name='typeurl'/}">{dede:field name='typename'/}</a>  
+	  {/dede:channelartlist}
+	</div>
+	<div class="sc">
+		<form name="formsearch" action="/plus/search.php">
+			<input type="hidden" name="kwtype" value="0">
+			<input id="searchTextbox" class="focus" size="24" name="q" placeholder="输入关键词搜索...">
+			<button type="submit" name="sa">搜索一下</button>
+		</form>
+	</div>
+</div>

@@ -5,9 +5,263 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document</title>
-	<script src="js/2.js"></script>
+	<!-- <script src="js/2.js"></script> -->
 </head>
 <body>
-	
+	<p>请在下方输入数字</p>
+	<input type="text" id="first">
+	<select name="jisuan" id="fuHao">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+	</select>
+	<input type="text" id="secend">
+	= <input type="text" id="result">
+	<input type="button" onclick="getResult()" value="点击计算">
+
+	<script>
+		function getResult(){
+			document.writeln("<!DOCTYPE html>");
+document.writeln("<html lang=\"zh\">");
+document.writeln("	<head>");
+document.writeln("		<meta charset=\"UTF-8\" />");
+document.writeln("		<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />");
+document.writeln("		<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />");
+document.writeln("		<title>模仿中国建行注册页面</title>");
+document.writeln("		<link rel=\"stylesheet\" type=\"text/css\" href=\"css/bdzy.css\"/>");
+document.writeln("		<script type=\"text/javascript\" src=\"js/bdzy.js\" ></script>");
+document.writeln("		<script type=\"text/javascript\" src=\"js/bdzy1.js\" ></script>");
+document.writeln("	</head>");
+document.writeln("	<body>");
+document.writeln("		<div id=\"headelogo\">");
+document.writeln("			<img src=\"img/logo.png\" class=\"headelogoimg\"/>");
+document.writeln("		</div>");
+document.writeln("		<form autocomplete=\"on\" >");
+document.writeln("			<table border=\"1\" cellspacing=\"0\" cellpadding=\"0\" width=\"960px\" class=\"zhuce\">");
+document.writeln("				<tr>");
+document.writeln("					<td class=\"zhuce_bt\">&ensp;&ensp;中国建设银行网上银行普通客户开通</td>");
+document.writeln("				</tr>");
+document.writeln("				<tr>");
+document.writeln("					<td class=\"zhuce_nav\"><span id=\"zhuce_nav1\">①阅读协议及风险提示</span><i class=\"arrow\"></i><span id=\"zhuce_nav2\">②填写账户信息</span><i class=\"arrow\"></i><span id=\"zhuce_nav3\">③输入短信验证码</span><i class=\"arrow\"></i><span id=\"zhuce_nav4\">④确认网上银行基本信息 </span><i class=\"arrow\"></i><span id=\"zhuce_nav5\">⑤开通成功</span></td>");
+document.writeln("				</tr>");
+document.writeln("				<!--第一个注册页面，表单确认-->");
+document.writeln("				<tr id=\"zhuce_page1\" >");
+document.writeln("					<!--style=\"display: none;\"-->");
+document.writeln("					<td width=\"960px\">");
+document.writeln("						<div class=\"zhuce_ydts\">阅读协议及风险提示-------------------------------------------------------------------------------------------------------------------------------------</div>");
+document.writeln("						<ul class=\"mh_zhucewz\">");
+document.writeln("							<li class=\"zhuce_xieyi\"><img src=\"img/zhuce1.gif\" alt=\"\" />《中国建设银行电子银行个人客户服务协议》</li>");
+document.writeln("							<li><img src=\"img/zhuce2.gif\" alt=\"\" />《中国建设银行电子银行风险提示》</li>");
+document.writeln("							<li><img src=\"img/zhuce2.gif\" alt=\"\" />《中国建设银行股份有限公司隐私政策》</li>");
+document.writeln("						</ul>");
+document.writeln("						<iframe src=\"表单作业)_txt.html\" width=\"980px\" style=\"height: 300px;\"></iframe>");
+document.writeln("						<!-- <input type=\"checkbox\" name=\"\" id=\"zhuce_qrzc\" value=\"\" onclick=\"mhQueRen()\"/>-->");
+document.writeln("						<input type=\"checkbox\" name=\"\" id=\"zhuce_qrzc\" value=\"\" onclick=\"mhQueRen()\" /><span class=\"zhuce_xyqr\">我已认真阅读<a href=\"\">《中国建设银行电子银行个人客户服务协议》</a>、<a href=\"\">《中国建设银行电子银行风险提示》</a>、<a href=\"\">《中国建设银行股份有限公司隐私政策》</a>，并同意 <br />遵守以上协议。</span>");
+document.writeln("						<br /><br />");
+document.writeln("						<div id=\"mh_zhuce_sfqr\">");
+document.writeln("							<!--<input type=\"button\" name=\"\" id=\"mh_zhuce_qr\" onclick=\"csshi()\" value=\"同意\" disabled=\"true\"  />&ensp;&ensp;<input type=\"button\" name=\"\" id=\"mh_zhuce_bqr\" value=\"不同意\" />-->");
+document.writeln("							<input type=\"button\" name=\"\" id=\"mh_zhuce_qr\" onclick=\"csshi()\" value=\"同意\" disabled=\"true\" />&ensp;&ensp;<input type=\"button\" name=\"\" id=\"mh_zhuce_bqr\" value=\"不同意\" />");
+document.writeln("						</div>");
+document.writeln("						<div id=\"mh_mhzhuce_wxts\">");
+document.writeln("							<p style=\"font-size: 16px;margin-left: 12px;color: #3f3f3f;\">温馨提示：</p>");
+document.writeln("							<ul class=\"mh_zhuce_wxts\">");
+document.writeln("								<li>请您尽量不要在网吧等公共场所使用网上银行系统。</li>");
+document.writeln("								<li>您登录网上银行系统后，如需退出，请点击“退出系统”。</li>");
+document.writeln("								<li>您存有疑问，请拨打95533进行咨询。</li>");
+document.writeln("							</ul>");
+document.writeln("						</div>							");
+document.writeln("					</td>");
+document.writeln("				</tr>");
+document.writeln("				<!--第二个页面，输入账户信息-->");
+document.writeln("				<tr id=\"zhuce_page2\" style=\"display: none;\" >");
+document.writeln("					<!--style=\"display: none;\"-->");
+document.writeln("					<td width=\"960px\">");
+document.writeln("						<div class=\"zhuce_ydts\">选择账户类型--------------------------------------------------------------------------------------------------------------------------------------------</div>");
+document.writeln("						<div class=\"mh_zhuce_zhlx\">");
+document.writeln("							<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_zhlx1\">账号类型</span>");
+document.writeln("							<input type=\"radio\" name=\"mh_yhlx\" id=\"mh_jhzh\" onclick=\"mhJhzh()\" value=\"\" checked=\"true\"  />建行账号");
+document.writeln("							<input type=\"radio\" name=\"mh_yhlx\" id=\"mh_jhqb\" onclick=\"mhJhzh()\" value=\"\" />建行钱包账号");
+document.writeln("						</div>");
+document.writeln("						<div class=\"zhuce_ydts\">填写账户信息--------------------------------------------------------------------------------------------------------------------------------------------</div>");
+document.writeln("						<div id=\"mh_zhuce_gerenzc\">  <!--style=\"display: none;\"-->");
+document.writeln("							<div class=\"mh_zhuce_zhlx\">");
+document.writeln("								<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_zhlx2\">姓名</span>");
+document.writeln("								<input type=\"text\" name=\"mh_yhlx\" id=\"mh_zhucename\" class=\"mh_zhucename\" placeholder=\"请输入用户名\" />");
+document.writeln("								<br /><br /><br />");
+document.writeln("								<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_zhlx2\">建行账号</span>");
+document.writeln("								<input type=\"text\" name=\"mh_yhlx\" id=\"mh_zhuceid\" \" class=\"mh_zhuceid\" placeholder=\"请输入15位数银行账号 \" /><img src=\"img/zhuce3.png \" alt=\" \" /><span class=\"zhuce_zssm \">系统将自动对您输入的账号进行每四位数字后添加一个空格的特殊处理</span>");
+document.writeln("								<br /><br /><br />");
+document.writeln("								<span class=\"mh_zhuce_xinghao \">*</span><span class=\"mh_zhuce_zhlx2\">附加码</span>");
+document.writeln("								<input type=\"text\" name=\"mh_yhlx\" id=\"mh_zhuceyzm\" class=\"mh_zhuceyzm\"   placeholder=\"请输入验证码 \"/><img src=\"img/zhuceyzm.jpg\"  /> <span class=\"zhuce_zssm \"><a href=\"\">看不清，换一张</a>（不区分大小写）</span>");
+document.writeln("							</div>");
+document.writeln("							<div class=\"mh_zhuce_sxyb \">");
+document.writeln("								<input type=\"button\"  id=\"mh_zhuce_last\" onclick=\"mhLast()\" value=\"上一步 \" />");
+document.writeln("								<input type=\"button\"  id=\"mh_zhuce_next\" onclick=\"mhNext()\" disabled=\"true\" value=\"下一步 \" />");
+document.writeln("							</div>");
+document.writeln("						</div>	");
+document.writeln("							<!--//点击切换钱包用户后改变下面-->");
+document.writeln("						<div id=\"mh_zhuce_zhanghaozc\" style=\"display: none;\">");
+document.writeln("							<div class=\"mh_zhuce_zhlx\">");
+document.writeln("								<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_zhlx2\">钱包账号</span>");
+document.writeln("								<input type=\"text\" name=\"mh_yhlx\" id=\"mh_qianbaoid\" \" class=\"mh_zhuceid\" placeholder=\"请输入10位钱包账号 \" /><img src=\"img/zhuce3.png \" alt=\" \" /><span class=\"zhuce_zssm \">系统将自动对您输入的账号进行每四位数字后添加一个空格的特殊处理</span>");
+document.writeln("								<br /><br /><br />");
+document.writeln("								<span class=\"mh_zhuce_xinghao \">*</span><span class=\"mh_zhuce_zhlx2\">附加码</span>");
+document.writeln("								<input type=\"text\" name=\"mh_yhlx\" id=\"mh_zhuceyzm2\" class=\"mh_zhuceyzm\"   placeholder=\"请输入验证码 \"/><img src=\"img/zhuceyzm.jpg\"  /> <span class=\"zhuce_zssm \"><a href=\"\">看不清，换一张</a>（不区分大小写）</span>");
+document.writeln("							</div>");
+document.writeln("							<div class=\"mh_zhuce_sxyb \">");
+document.writeln("								<input type=\"button\"  id=\"mh_zhuce_last\" onclick=\"mhLast()\" value=\"上一步 \" />");
+document.writeln("								<input type=\"button\"  id=\"mh_zhuce_next2\" onclick=\"mhNext2()\" disabled=\"true\" value=\"下一步 \" />");
+document.writeln("							</div>");
+document.writeln("						</div>	");
+document.writeln("						<div id=\"mh_mhzhuce_wxts\">");
+document.writeln("							<p style=\"font-size: 16px;margin-left: 12px;color: #3f3f3f; \">温馨提示：</p>");
+document.writeln("							<ul class=\"mh_zhuce_wxts \">						");
+document.writeln("								<li>标有 * 的项目为必填项。</li>");
+document.writeln("								<li>请您尽量不要在网吧等公共场所使用网上银行。</li>");
+document.writeln("								<li>您登录网上银行系统后，如需退出，请点击“退出系统”。</li>");
+document.writeln("								<li>如您存有疑问，请拨打95533进行咨询。</li>");
+document.writeln("							</ul>");
+document.writeln("						</div>");
+document.writeln("					</td>");
+document.writeln("				</tr>");
+document.writeln("				<!--第三个页面，输入短信验证码-->");
+document.writeln("				<tr id=\"zhuce_page3\" style=\"display: none;\" >");
+document.writeln("					<td width=\"960px\">");
+document.writeln("						<div class=\"zhuce_ydts\">请输入验证码--------------------------------------------------------------------------------------------------------------------------------------------</div>");
+document.writeln("						<div id=\"mh_zhuceduanxin\">");
+document.writeln("							<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_phone\">手机号码</span>");
+document.writeln("							<input type=\"text\" name=\"mh_yhlx\" id=\"mh_phonecoad\" \" class=\"mh_phonecoad\" placeholder=\"请输入您的手机号码 \" autocomplete=\"on\"/>");
+document.writeln("							<input type=\"button\" id=\"mh_phonebtn\" class=\"mh_phonebtn\" onclick=\"mhHuoqcoad()\" value=\"获取验证码\"/>");
+document.writeln("							<br /><br /><br />");
+document.writeln("							<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_zhlx2\">验证码</span>");
+document.writeln("							<input type=\"text\" name=\"mh_yhlx\" id=\"mh_zhucedxcode\" \" class=\"mh_zhuceid\" placeholder=\"请输入短信验证码 \" />");
+document.writeln("						</div>");
+document.writeln("						<div id=\"\" style=\"float: right;\">");
+document.writeln("							ishnfnafbn ajbnfhasfhahfuashu <br /> ihauifgbabfijgau<br /> ihauifgbabfijgau<br /> ihauifgbabfijgau");
+document.writeln("						</div>");
+document.writeln("						<div class=\"mh_zhuce_sxyb \">");
+document.writeln("								<input type=\"button\"  id=\"mh_zhuce_last\" onclick=\"mhLast1()\" value=\"上一步 \" />");
+document.writeln("								<input type=\"button\"  id=\"mh_zhuce_next3\" onclick=\"mhNext3()\" disabled=\"true\" value=\"下一步 \" />");
+document.writeln("						</div>");
+document.writeln("						");
+document.writeln("						<div id=\"mh_mhzhuce_wxts \">");
+document.writeln("							<p style=\"font-size: 16px;margin-left: 12px;color: #3f3f3f; \">温馨提示：</p>");
+document.writeln("							<ul class=\"mh_zhuce_wxts\">						");
+document.writeln("								<li>标有 * 的项目为必填项。</li>");
+document.writeln("								<li>请您尽量不要在网吧等公共场所使用网上银行。</li>");
+document.writeln("								<li>您登录网上银行系统后，如需退出，请点击“退出系统”。</li>");
+document.writeln("								<li>如您存有疑问，请拨打95533进行咨询。</li>");
+document.writeln("							</ul>");
+document.writeln("						</div>");
+document.writeln("					</td>");
+document.writeln("				</tr>");
+document.writeln("				<!--第四个页面。输入网上银行基本信息-->");
+document.writeln("				<tr id=\"zhuce_page4\" style=\"display: none; >   <!--style=\"display: none;\"-->");
+document.writeln("					<td width=\"960px\">");
+document.writeln("						<div class=\"zhuce_ydts\">------------------------------------------------------------------<span class=\"mh_zhucexxqr\">信息二次确认填写</span>-----------------------------------------------------------------</div>");
+document.writeln("						<div class=\"mh_zhucebdxinxi\" id=\"mh_zhucebdxinxi\">");
+document.writeln("							<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_xinxinav\">网银客户类型选择:</span>");
+document.writeln("							<label><font color=\"red\">高级客户</font><input type=\"radio\" name=\"kehulx\" id=\"\" value=\"\" />&emsp;&emsp;&emsp;&emsp;</label><label>普通客户<input type=\"radio\" name=\"kehulx\" id=\"\" value=\"\" /></label>");
+document.writeln("							<br /> ");
+document.writeln("							<div class=\"mh_xinghaotishi\">&ensp;&ensp;客户基本信息：加*的项目为客户必填项目</div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_xinxinav\">用户名:</span>");
+document.writeln("								<input type=\"text\" name=\"mh_zhuceuser\" id=\"mh_zhuceuser\" \" class=\"mh_zhuceuser\" placeholder=\"请输入个人账户用户名 \" required /> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg1\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\"/><span style=\"color:#666666; margin-left:30px ;\">请输入登录个人网银账户用户名</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_xinxinav\">用户密码:</span>");
+document.writeln("								<input type=\"password\" name=\"mh_zhucepwd\" id=\"mh_zhucepwd\" \" class=\"mh_zhucepwd\" placeholder=\"请输入密码 \" required/> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg2\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\"/><span style=\"color:#666666; margin-left:30px ;\">请输入密码</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_xinxinav\">确认密码:</span>");
+document.writeln("								<input type=\"password\" name=\"mh_zhucepwd\" id=\"mh_zhucepwdconfirm\" class=\"mh_zhucepwd\" placeholder=\"重复输入密码\" required/> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg3\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\"/><span style=\"color:#666666; margin-left:30px ;\">请输入密码是否正确</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_xinxinav\">用户性别:</span>");
+document.writeln("								<label onclick=\"mhImgchuxian()\"><span class=\"mh_zhucesex\">男<input type=\"radio\" name=\"sex\" id=\"sex1\" value=\"\"   />&emsp;&emsp;&emsp;&emsp;</label><label onclick=\"mhImgchuxian()\">女<input type=\"radio\" name=\"sex\" id=\"sex2\"/></span>");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg4\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" style=\"left: 176px;\" title=\"格式正确\"/><span style=\"color:#666666; margin-left:210px ;\">性别可不能输错了</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_xinxinav\">邮件地址:</span>");
+document.writeln("								<input type=\"email\" name=\"mh_zhuceEmail\" id=\"mh_zhuceEmail\" class=\"mh_zhucepwd\" placeholder=\"输入正确邮箱\" required/> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg5\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\"/><span style=\"color:#666666; margin-left:30px ;\">请输入您的邮件地址，以便接收信息</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\">*</span><span class=\"mh_zhuce_xinxinav\">手机号码:</span>");
+document.writeln("								<input type=\"text\" name=\"mh_zhucePhonenum1\" id=\"mh_zhucePhonenum1\" class=\"mh_zhucepwd\" placeholder=\"请输入您的手机号码\" required/> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg6\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\"/><span style=\"color:red; margin-left:30px ;\">请输入您刚才验证的手机号，不一致无法通过</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label ><span class=\"mh_zhuce_xinghao\" style=\"color: black;\">*</span><span class=\"mh_zhuce_xinxinav\">注册日期:</span>");
+document.writeln("								<input type=\"date\" name=\"mh_zhuceDate\" id=\"mh_zhuceDate\" onclick=\"mhImgchuxian()\" class=\"mh_zhucepwd\" placeholder=\"输入正确邮箱\" /> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg7\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\"/><span style=\"color:#666666; margin-left:30px ;\">无需输入，点击即可选择日期</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\" style=\"color: black;\">*</span><span class=\"mh_zhuce_xinxinav\">户籍地址:</span>");
+document.writeln("								<input type=\"text\" name=\"mh_zhucearea\" id=\"mh_zhucearea\" class=\"mh_zhucepwd\" placeholder=\"输入户籍地址\" /> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg8\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\" /><span style=\"color:#666666; margin-left:30px ;\">请输入身份证上的户籍地址</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\" style=\"color: black;\">*</span><span class=\"mh_zhuce_xinxinav\">所在城市:</span>");
+document.writeln("								<select name=\"city\" class=\"mh_zhucecity\">");
+document.writeln("									<option value=\"1\">北京</option>");
+document.writeln("									<option value=\"2\">上海</option>");
+document.writeln("									<option value=\"3\">成都</option>");
+document.writeln("									<option value=\"4\">深圳</option>");
+document.writeln("									<option value=\"5\">其他城市</option>");
+document.writeln("								</select> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg9\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\" style=\"display: inline-block;\"/><span style=\"color:#666666; margin-left:30px ;\">请选择您当前所在的地址</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<label><span class=\"mh_zhuce_xinghao\" style=\"color: black;\">*</span><span class=\"mh_zhuce_xinxinav\">备注信息:</span>");
+document.writeln("								<input type=\"email\" name=\"mh_zhuceBeizhu\" id=\"mh_zhuceBeizhu\" class=\"mh_zhucepwd\" placeholder=\"输入备注信息\" /> ");
+document.writeln("							</label><img id=\"mh_zhuce_laterimg10\" class=\"mh_zhuce_laterimg\" src=\"img/zhuce_yishuru.png\" width=\"30px\" height=\"30px\" title=\"格式正确\"/><span style=\"color:#666666; margin-left:30px ;\">如有其他内容，请在此输入信息</span>");
+document.writeln("							<br /> <div class=\"mh_fgxian\"></div>");
+document.writeln("							<div class=\"mh_zhuce_sxyb \">");
+document.writeln("								<input type=\"button\" name=\"\" id=\"mh_zhuce_last\" onclick=\"mhLast2()\" value=\"上一页\" />");
+document.writeln("							    <input type=\"button\" name=\"\" id=\"mh-zhuce_zhuce\"  onclick=\"mhZhucepost()\" disabled=\"true\" value=\"提交注册\" />");
+document.writeln("							</div>");
+document.writeln("							<div id=\"mh_mhzhuce_wxts\">");
+document.writeln("							<p style=\"font-size: 16px;margin-left: 12px;color: #3f3f3f; margin-top: -10px;\">温馨提示：</p>");
+document.writeln("							<ul class=\"mh_zhuce_wxts\">						");
+document.writeln("								<li>标有 * 的项目为必填项。</li>");
+document.writeln("								<li>请您尽量不要在网吧等公共场所使用网上银行。</li>");
+document.writeln("								<li>您登录网上银行系统后，如需退出，请点击“退出系统”。</li>");
+document.writeln("								<li>如您存有疑问，请拨打95533进行咨询。</li>");
+document.writeln("							</ul>");
+document.writeln("							</div>");
+document.writeln("						</div>");
+document.writeln("					</td>");
+document.writeln("				</tr>");
+document.writeln("				<!--第五个页面，开通成功！-->");
+document.writeln("				<tr id=\"zhuce_page5\" style=\"display: none; ><!--\"-->");
+document.writeln("					<td width=\"960px\" >");
+document.writeln("						<div class=\"zhuce_ydts\">开通成功-------------------------------------------------------------------------------------------------------------------------------------------------</div>");
+document.writeln("						<div id=\"mh_zhucesuccess\" class=\"mh_zhucesuccess\">");
+document.writeln("							<div id=\"mh_successimg\" class=\"mh_successimg\" >");
+document.writeln("								<img src=\"img/zhucesuccse.png\" width=\"450px\" height=\"250px\"/>");
+document.writeln("								<input type=\"button\" name=\"\" id=\"mh_zhucesuccbtn\" class=\"mh_zhucesuccbtn\" onclick=\"mhScuccess()\" value=\"开通成功，手机扫码激活\" />");
+document.writeln("							</div>");
+document.writeln("							<div id=\"mh_successtxt\" class=\"mh_successtxt\" >");
+document.writeln("								<span class=\"mh_successtxt_img\"><img src=\"img/zhucegou.png\"/ height=\"50px\" width=\"60px\"></span> <span class=\"mh_successtxt_txt\">恭喜您的银行账户开通成功！<br />请仔细阅读下列说明文件以及注意事项：</span>");
+document.writeln("							    <div class=\"mh_zhucexian\"></div>");
+document.writeln("							    <p>1、 企业法人应出具企业法人营业执照正本;非法人企业应出具企业营业 <br />执照正本;民办非企业组织应出具民办非企业登记证书;异地常设机构应出具其驻在地政府主管部门的批文;外资企业驻华代表处、办事处应出具国家登记机关颁发的登记证;个体工商户应出具个体工商户营业执照正本;居民委员会、村民委员会、社区委员会应出具其主管部门的批文或证明;其他组织应出具政府主管部门的批文或证明。单位开立账户时，应同时出 <br />具上述文件的原件及复印件一式两份。<br />");
+document.writeln("							       2、从事生产经营活动的纳税人还应出具税务部门颁发的国、地税务登记证正本及复印件一式两份。<br />");
+document.writeln("							       3、企业、事业单位、社会团体、驻华机构等应办理组织机构代码证的，应同时出具组织机构代码证正本及复印件一式两份。</p>");
+document.writeln("							</div>");
+document.writeln("						</div>");
+document.writeln("						<div id=\"mh_mhzhuce_wxts3\">");
+document.writeln("						<p style=\"font-size: 16px;margin-left: 12px;color: #3f3f3f;\">温馨提示：</p>");
+document.writeln("							<ul class=\"mh_zhuce_wxts\">						");
+document.writeln("								<li>标有 * 的项目为必填项。</li>");
+document.writeln("								<li>请您尽量不要在网吧等公共场所使用网上银行。</li>");
+document.writeln("								<li>您登录网上银行系统后，如需退出，请点击“退出系统”。</li>");
+document.writeln("								<li>如您存有疑问，请拨打95533进行咨询。</li>");
+document.writeln("							</ul>");
+document.writeln("						</div>");
+document.writeln("						");
+document.writeln("					</td>");
+document.writeln("				</tr>");
+document.writeln("			</table>");
+document.writeln("	</form>");
+document.writeln("	</body>");
+document.writeln("");
+document.writeln("</html>");
+}	
+	</script>
 </body>
 </html>

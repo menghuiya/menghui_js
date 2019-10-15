@@ -1,21 +1,27 @@
-
-.<!DOCTYPE html>
+ .
+<!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 	</head>
-	<body>
-		
-<div id="append">梦回</div>
-<script>
-var divA = document.getElementById("append");
-    divA.innerHTML = divA.innerText+'追加的内容s';
-    divA.innerHTML = divA.innerText+'追加的内容s';
-    //divA.innerHTML +='追加的内容s';
-    divA.innerHTML = divA.innerHTML+'<h3>追加内容为H3字体</h3>';
-    divA.innerHTML = divA.innerHTML+'<h3>追加内容为H3字体</h3>';
-</script>
 
+	<body>
+		<p id="txt" >sdadadas</p>
+		<p onclick="copytxt()">fuzhi</p>
+		<script type="text/javascript">
+			//复制文本
+			function copytxt() {
+				//获取节点
+				var con = document.getElementById(txt).innerHTML;
+				//选中内容
+				con.select();
+				// 执行浏览器复制
+				document.execCommand("Copy");
+
+			}
+		</script>
 	</body>
+
 </html>

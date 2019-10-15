@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sessionStorage 计数器</title>
+</head>
+<body>
+    <h3>sessionStorage 计数器</h3>
+    <div id="content"></div>
+    <p></p>
+    <hr>
+    <script>
+        if(!sessionStorage["counter"]){
+            sessionStorage["counter"]=0;
+        }else{
+            sessionStorage["counter"]++;
+        }
+        document.querySelector("#content").innerHTML="刷新次数 "+sessionStorage.getItem("counter");
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+	<div class="header mryy">
+		<div class="header_left">
+			<div class="dh">
+				<span onclick="daohang()">
+				<i class="fa fa-bars fa-lg"></i>
+				</span>
+			</div>
+			<div id="nav">
+				<div class="header">
+					<div class="header_left">
+						<div class="dh">
+							<span onclick="guanbi()">
+							<i class="fa fa-times fa-lg"></i>
+							</span>
+						</div>
+					</div>
+					<div class="header_center">
+						<div class="logo">
+							<a href="/m" title="{dede:global.cfg_webname/}">
+							<img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}"/>
+							</a>
+						</div>
+					</div>
+					<div class="header_right">
+						<div class="search">
+						</div>
+					</div>
+				</div>
+				<div class="linav">
+					<div class="daohang">
+						<span>ÍøÕ¾µ¼º½</span>
+						<ul>
+						{dede:channel type ='top'}<li><a href="/m/list.php?tid=[field:id/]" >[field:typename/]</a></li>{/dede:channel}	
+						</ul>
+					</div>
+				</div>
+				<div class="sososo">
+					<div class="sola">
+						<span>ÄÚÈÝËÑË÷</span>
+						<div class="sc">
+							<form name="formsearch" action="/plus/search.php">
+								<input type="hidden" name="kwtype" value="0">
+								<input id="searchTextbox" class="focus" size="24" name="q" placeholder="ÊäÈë¹Ø¼ü´Ê°´»Ø³µ¼üËÑË÷...">
+								<button type="submit" name="sa">ËÑË÷</button>
+								<button type="reset"class="chongxie">ÖØÐ´</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header_center">
+			<div class="logo">
+				<a href="/m" title="{dede:global.cfg_webname/}">
+				<img src="/skin/images/logo.png" alt="{dede:global.cfg_webname/}"/>
+				</a>
+			</div>
+		</div>
+		<div class="header_right">
+			<div class="search">
+				<span onclick="daohang()">
+				<i class="fa fa-search fa-lg"></i>
+				</span>
+			</div>
+		</div>
+	</div>
