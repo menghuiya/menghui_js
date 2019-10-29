@@ -14,7 +14,9 @@ header{
 	height: 32px;
 	font-size: 16px;
 	margin: auto;
-
+	background: #cebf91;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px;
 }
 header span{
 	display: inline-block;
@@ -25,6 +27,9 @@ header span{
 	margin: auto;
 	margin-top: 10px;
 	height: 80px;
+	background: #614b2a;
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px;
 }
 .searchs{
 	margin-top: 20px;
@@ -78,12 +83,21 @@ header span{
 }
 .contentnews{
 	height: 120px;
+    background: linear-gradient(to right, #dbe0db,#d6b44d,#615169b8,#cc939d);
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 3px 2px #716262;
 }
 .qqlog{
 	width: 100px;
-	height: 90px;
+	height: 100px;
 	margin-left: 10px;
 	margin-top: 5px;
+}
+.qqlog img {
+    border-radius: 50%;
+    border: 2px solid #37825f;
+    box-shadow: 1px 5px 5px 5px #bba256;
 }
 .contnewss{
 	width: 560px;
@@ -130,7 +144,7 @@ header span{
 	cursor: pointer;
 	background: #008800;
 }
-.contentnews input{
+.zan{
 	margin-top: 10px;
 	margin-right: 25px;
 	width: 80px;
@@ -139,7 +153,7 @@ header span{
 	border-radius: 10px;
 	background: #008855;
 }
-.contentnews input:hover{
+.zan:hover{
 	cursor: pointer;
 	background: #00BB00;
 }
@@ -179,11 +193,15 @@ header span{
 	width: 243px;
 	height: 240px;
 	text-align: center;
-	background: fuchsia;
+	background: #5469519e;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 3px 5px #523f3f;
 }
 .myzliao img{
-	padding-top: 10px;
-	background: red;
+	margin-top: 10px;
+    border: 2px solid #294e5f;
+    border-radius: 50%;
 }
 .myzliao input{
 	width: 120px;
@@ -193,13 +211,167 @@ header span{
     border: 0;
     border-radius: 5px;
 }
+.myzliao input:hover{
+	cursor: pointer;
+	background: #BB60D5;
+}
 .newnews{
 	width: 100%;
 	height: 368px;
-	background: greenyellow;
+	background: #3d8ccc;
+    border: 1px solid #276fa9;
+    border-radius: 6px;
+    box-shadow: 5px 5px 5px;
 }
 .footbq{
-	height: 60px;
+	height: 120px;
 	width: 100%;
-	background: green;
+	background: #86a786;
+    border: 1px solid #756f39;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px;
+}
+#loginpage{
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    background: linear-gradient(to right,#8ae68a,#5ccdde,#b221ff);
+    border-radius: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin: -150px 0 0 -200px;
+    display: none;
+}
+
+#uid,#pwd{
+    width: 300px;
+    height: 30px;	
+    margin: 20px;
+    border-radius: 5px;
+}
+#loginbtn,#giveup{
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #efe6e6;
+    background: #517cdcb0;
+    border: 1px solid #5c81a7a3;
+}
+#registbtn{
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 6px;
+    font-size: 18px;
+    color: #efe6e6;
+    background: #517cdcb0;
+    border: 1px solid #5c81a7a3;
+}
+#loginbtn:hover,#registbtn:hover,#giveup:hover{
+    cursor: pointer;
+    background: #009900;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+#boxxx{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(50, 58, 57, 0.47);
+    display: none;
+}
+#registbox{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #73686f4a;
+    display: none;
+}
+#registpage{
+    width: 600px;
+    height: 500px;
+    font-size: 18px;
+    background: #00bcd49e;
+    border-radius: 10px;
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    margin: -150px 0 0 -300px;
+    display: none;
+}
+#registpage:hover,#loginpage:hover{
+	cursor: move;
+}
+#user_name,#user_psw,#user_psws,#user_qq,#user_email{
+    width: 500px;
+    height: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #3F51B5;
+    border-radius: 5px;
+}
+.registbtn{
+    font-size: 18px;
+    width: 120px;
+    height: 45px;
+    margin: 20px;
+    background: #3F51B5;
+    color: white;
+    border: 1px solid #4259d8;
+    border-radius: 10px;
+    box-shadow: 3px 1px 5px #283682;
+}
+.registbtn:hover{
+	cursor: pointer;
+	background: #0088FF;
+}
+
+/*添加留言界面*/
+#mh_addpage{
+    width: 1000px;
+    margin: auto;
+    border: 1px solid;
+    background: #6b5a5a;
+    border-radius: 10px;
+    box-shadow: 5px 5px #244c24;
+    text-align: center;
+    margin-top: 20px;
+}
+#mh_name,#mh_qq,#mh_email{
+    width: 230px;
+    height: 30px;
+    border-radius: 5px;
+}
+#mh_content{
+    width: 800px;
+}
+.contentps{
+    font-size: 20px;
+    font-weight: 800;
+    background:linear-gradient(to right, #8ae68a,#5ccdde,#b221ff,#ea0630);
+    -webkit-background-clip: text;
+    color: transparent; 
+}
+#mh_addbtn{
+    width: 300px;
+    height: 40px;
+    border:1px solid ;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 18px;
+    background: #2fa242;
+    color: white;
+}
+#mh_addbtn:hover{
+    cursor: pointer;
+    background: #008000;
 }

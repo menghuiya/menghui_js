@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>file</title>
+    <script>
+        function getFileInfo(){
+            //document反复执行
+            // var file=document.getElementById("setFile").files;
+            // for(var i=0;i<document.getElementById("setFile").files.length;i++){
+            //     var file=document.getElementById("setFile").files[i];
+            //     document.getElementById("dispInfo").innerHTML+=
+            //     "name:"+file.name+"<br>"+"modifiedDate:"+file.modifiedDate+"<br>"
+            //     +"size:"+file.size+"<br>"
+            //     +"type："+file.type+"<br><hr>"
+            // }
+            var dispMsg=document.getElementById("dispInfo");
+            var files=document.getElementById("setFile").files;
+            for(var i=0;i<files.length;i++){
+                var file=files[i];
+                dispMsg.innerHTML+=
+                "name:"+file.name+"<br>"+"modifiedDate:"+file.lastModifiedDate+"<br>"
+                +"size:"+file.size+"<br>"
+                +"type："+file.type+"<br><hr>"
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="file" id="setFile" multiple>
+    <button onclick="getFileInfo()">getFile</button>
+    <div>
+        <span id="dispInfo"></span>
+    </div>
+</body>
+</html>

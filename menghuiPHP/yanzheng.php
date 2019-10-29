@@ -10,7 +10,11 @@ $row = mysqli_fetch_assoc($result);
 //echo $row['password'];
 if($row['password'] == $_COOKIE['password'] &&$row['username'] == $_COOKIE['username'] )
 {	
-    echo "alert('您已登录');"; //调用函数写出是否已经登录
+//  echo "alert('您已登录');"; //调用函数写出是否已经登录
+	echo "onload=function(){
+			logins.style.display='none';
+			regist.style.display='none';
+		}";
 }
 else
 {

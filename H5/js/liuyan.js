@@ -46,7 +46,7 @@ function find() {
     var search_name = document.getElementById("search_name").value;
     var find_result = document.getElementById("find_result");
     var result = "";
-    if (search_name.length > 0) {
+    if (search_name.length>0) {
         for (var i = 0; i < localStorage.length; i++) {
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);

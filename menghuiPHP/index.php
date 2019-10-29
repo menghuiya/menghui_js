@@ -6,6 +6,11 @@
 		}else if('<?php echo basename(__FILE__);?>'!='index.php'){
 			alert("请登录");
 			window.location.href='login.php';
+		}else{
+			onload=function(){
+				var logout=document.getElementById("indexlogout");
+				logout.style.display="none";
+			}
 		}
 		
 	</script>
@@ -41,15 +46,15 @@
 	
 					$sql ="SELECT id,mh_name,mh_content,mh_qq,mh_email,mh_time FROM liuyanben order by mh_time desc LIMIT {$offset},{$num}";
 					$result =mysqli_query($conn,$sql);
-					if($result && mysqli_num_rows($result)>0){ 
-						 	$sqls ="select count(*) as count from liuyanben";
+					if($result && mysqli_num_rows($result)>0){
+						 	$sqls ="select count(*) as count from liuyanben"; //开始计算文章总数量
 							if($tempRes=mysqli_query($conn, $sqls)){
 								$rows =mysqli_fetch_assoc($tempRes);
 								$count =$rows['count']; //记录总数
 							} 
 							while($row = mysqli_fetch_assoc($result)){ ?>
 						        <div class="contentnews">					
-									<div class="qqlog fl"><img src="https://q4.qlogo.cn/headimg_dl?dst_uin=<?php echo $row['mh_qq']; ?>&spec=100"/ width="100px" height="90px"></div>
+									<div class="qqlog fl"><img src="https://q4.qlogo.cn/headimg_dl?dst_uin=<?php echo $row['mh_qq']; ?>&spec=100"/ width="100px" height="100px"></div>
 									<!--<div class="contnewss fr"><?php echo $row['mh_content']; ?></div>-->
 									<div class="contnewss fr">
 										<div class="auther">
@@ -62,8 +67,13 @@
 										
 								    </div>
 								<button class="emailbtn" onclick="alert('<?php echo $row['mh_name']; ?>的邮箱为：<?php echo $row['mh_email']; ?>')"><img src="img/email.png" alt="邮箱联系" title="邮箱联系"/></button>
-								<input type="button" name="" class=" fr" value="👍顶一个" />
-								<input type="button" name="" class=" fr" value="👎踩一个" />					
+								<?php 
+								$contentid=$row['id'];
+								$sqlss="select * from mes_info where contentid='$contentid'"; //开始计算点赞数量
+								$resultss = mysqli_query($conn,$sqlss);
+								$sqlallnum=mysqli_num_rows($resultss); ?>
+								<button name="<?php echo $contentid;?>" id="zanyige" class="zan fr" onclick="dianzan(this)">👍 +<span id="zanshu"><?php echo $sqlallnum; ?></span></button>
+								<button name="" class="zan fr">👎</button>				
 								</div>
 								<hr />
 							<?php }
@@ -91,8 +101,9 @@
 				<?php include("public/fun.inc.php");?>
 				<div class="myzliao" id="myzliao">
 					<img src="https://q4.qlogo.cn/headimg_dl?dst_uin=<?php echo $qq; ?>&spec=100"/ width="100px" height="100px"> <br />
-					<a href="login.php"><input type="button" name="indexlogin" id="indexlogin" value="登录账号" /> </a><br />
-					<input type="button" name="indexlogout" id="indexlogout" value="退出登录" />
+					<input type="button" name="indexlogin" id="loginbtns" value="登录账号" /><br />
+					<input type="button" name="indexlogout" id="indexlogout" value="退出登录" /> <br />
+					<input type="button" name="indexregist" id="indexregist" value="注册账号" />
 				</div>
 				<div class="hotnews">最新留言</div>
 				<div class="newnews">111111111111111</div>
@@ -100,33 +111,34 @@
 				<div class="footbq"></div>
 			</div>
 		</div>
+		<!--登录页面开始-->
+		<div id="boxxx">  
+			<div id="loginpage">
+				<h2>梦回留言登录页面</h2>
+				<input type="text" name="uid"  id="uid"/ placeholder="请输入账户"> <br />
+				<input type="password" name="pwd"  id="pwd"/ placeholder="请输入密码"> <br />
+				<input type="button" value="登录" id="loginbtn" />
+				<input type="button" value="取消" id="giveup" />
+				<input type="button" value="注册" id="registbtn" />				
+			</div>			
+		</div>
+		<!--登录页面结束-->
+		<!--注册页面开始-->
+		<div id="registbox">
+			<div id="registpage">
+				<h2>梦回留言注册页面</h2>
+				<form action="action.php?action=regist" method="post">
+					<input type="text" name="user_name" id="user_name" placeholder="请输入用户名"/ required> <br />
+					<input type="password" name="user_psw" id="user_psw" placeholder="请输入密码"/ required> <br />
+					<input type="password" name="user_psws" id="user_psws" placeholder="请二次输入密码"/ required> <br />
+					<input type="text" name="user_qq" id="user_qq" placeholder="请输入qq"/ required> <br />
+					<input type="email" name="user_email" id="user_email" placeholder="请输入邮箱"/ required> <br />
+					<input type="submit" value="提交注册"/ class="registbtn" id="registbtns">
+					<input type="button" value="取消注册"/ class="registbtn" id="regiveup">
+				</form>
+			</div>
+		</div>
+		<!--注册页面结束-->		
 	</body>
-		
-	<script type="text/javascript">
-	$(document).ready(function(e) {
-	    $("#indexlogout").click(function(){//给按钮加点击事件
-	        
-	        //调ajax
-	        $.ajax({            
-	            url:"logout.php",
-	            type:"POST",
-	            dataType:"TEXT",
-	            success: function(data){
-	                    if(data.trim()=="OK")//要加上去空格trim，防止内容里面有空格引起错误。
-	                    {   
-	                    	alert("注销成功")
-	                        window.location.href="index2.php";//js跳转页面，要记住。
-	                    }
-	                    else
-	                    {
-	                      alert("注销失败，发生意外")
-	                    }
-	            
-	                }
-	            
-	            });
-	        
-	        })
-	});
-	</script>
+	<script type="text/javascript" src="js/action.js" ></script>
 </html>

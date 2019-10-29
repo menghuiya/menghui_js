@@ -4,30 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>构造函数</title>
 </head>
+
 <body>
     <script>
-        function box(x,y){
-        this.x=x;
-        this.y=y;
-        this.total=add();
-        this.show=function(){
-            document.write("<h2>"+this.x+"</h2><h2>"+this.y+"</h2>");
-        };
-        function add(){
-           alert(this.x)
-        };
-        this.toString=function(){
-            document.write("(" +this.x +","+this.y+")") ;
-        };
-
+        //定义一个“类”，通过构造函数模拟类的定义
+        function Point(x,y){
+            this.x=x;
+            this.y=y;
+            this.total=add();
+            this.show=function(){
+                console.log(`${this.toString()}=>${this.total}`);
+            };
+            function add(){
+                return x+y;
+            }
+            this.toString=function(){
+            //     return"("+this.x+","+this.y+")";
+            return`(${this.x},${this.y})`;
+            };
         }
-        box(13,14);
-        var p=new box(520,1314);
-        // p.show();
-        // p.toString();
-        p.total;
+        // Point(100,200);//将100.200赋值给this函数
+        // console.log(window.x,window.y);
+
+        var p1=new Point(21,22);//构造函数
+        // console.log(p1.x,p1.y);
+        p1.show();
+        p1.multiply=function(){
+            return this.x*this.y;
+        }
+
+        //原型扩展
+        Point.prototype.multiply=function(){  //构造函数
+            return this.x*this.y;
+        }
+        p1.total;
+        // console.log(p1.add());
+        var p2=new Point(31,32);
+        // console.log(p2.x,p2.y);
+        p2.show();
     </script>
+    <button>111</button>  <button>222</button>
 </body>
 </html>

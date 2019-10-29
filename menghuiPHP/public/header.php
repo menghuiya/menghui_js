@@ -7,6 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>梦回留言记录</title>
 		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<script src="js/jquery-ui.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 	</head>
 	
