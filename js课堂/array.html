@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>splice()方法</title>
+</head>
+
+<body>
+    <script>
+        //通过扩展数组原型的splice()方法
+        //实现数组的插入insert   delete  replace
+        Array.prototype.insert = function (index, ...items) {
+            for (var i = 0; i < items.length; i++) {
+                this.splice(index + i, 0, items[i]);
+            }
+        };
+        Array.prototype.remove = function (index, deleteCount = 1) {
+            this.splice(index, deleteCount);
+        };
+        Array.prototype.replace = function (start, end, ...items) {
+            var len = end - start + 1;
+            this.remove(start, len);
+            for (var i = 0; i < items.length; i++) {
+                this.splice(start + i, 0, items[i]);
+            }
+        }
+        var nums = [1, 12, 13, 14, 15, 159, 654];
+        nums.insert(1, 20, 30, 40)
+        console.log(nums);
+
+        nums.forEach(function(val){
+            console.log(val);
+        })
+    </script>
+</body>
+
+</html>
