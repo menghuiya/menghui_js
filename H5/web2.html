@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>梦回留言本</title>
+	<link rel="stylesheet" type="text/css" href="css/liuyan.css" />
+	<script src="js/liuyan.js"></script>
+</head>
+
+<body>
+	<div class="liuyanb">
+
+		<h3>请在下面文本域输入留言内容</h3>
+		<hr>
+		<textarea name="" rows="10" cols="60" id="memo"></textarea> <br />
+		<input type="button" value="保存留言" onclick="saveStorage('memo')" /> <br /><br />
+		<input type="text" name="search_name" id="search_name">
+		<br>
+		<input type="button" onclick="find()" value="查找信息">
+		<table border='1px' style='border-collapse: collapse;' id="find_result"></table>
+		<input type="button" value="查询留言" onclick="loadStorage('msg')" />
+		<input type="button" value="删除数据" onclick="clearStorage()" />
+		<p id="msg"></p>
+	</div>
+</body>
+
+</html>

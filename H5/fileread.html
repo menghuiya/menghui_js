@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!--5个对象：readAsBinaryString;
+                readAsText;
+                readAsDataURL;
+                readArrayBuffer;
+                abort;
+        6个事件：onabort;
+                onerror;
+                onloadstart
+                onprogress
+                onload
+                onloadend
+    -->
+    <p>
+        <label for="file">选择一个文件</label>
+        <input type="file" id="file" name="file" multiple>
+        <input type="button" value="读取图像" onclick="readAsDataURL()">
+        <input type="button" value="读取二进制文本" onclick="readAsBinaryString()">
+        <input type="button" value="读取文本文件" onclick="readAsText()">
+    </p>
+    <div id="result" name="result"></div>
+</body>
+
+
+<script>
+    var result=document.getElementById("result");
+    var file =document.getElementById("file");
+    function readAsDataURL(){
+        for(var i=0;i<file.files.length;i++){
+            var files=file.files[i];
+            var reader =new FileReader();
+            reader.readAsDataURL(files);
+            reader.onload =function(e){
+                // var resultimg=document.getElementById("result");
+                result.innerHTML+='<img src="'+this.result+'"+alt="">';
+            }
+        }  
+    }
+    function readAsText(){
+        var files=file.files[0];
+        var reader =new FileReader();
+        reader.readAsText(files);
+        reader.onload=function(e){
+            // var resulttxt=document.getElementById("result");
+            result.innerHTML=this.result;
+        }
+        reader.onprogress=function(){
+            alert("正在加载中")
+        }
+    }
+    function readAsBinaryString(){
+        var files=file.files[0];
+        var reader =new FileReader();
+        reader.readAsBinaryString(files);
+        reader.onload=function(e){
+            // var resulttxt=document.getElementById("result");
+            result.innerHTML=this.result;
+        }
+        reader.onprogress=function(){
+            alert("正在加载中")
+        }
+    }
+</script>
+</html>

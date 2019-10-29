@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function fileUp(){
+            var file;
+            for(var i=0;i<document.getElementById("file").files.length;i++){
+             file=document.getElementById("file").files[i];
+             if(!/image\/\w+/.test(file.type)){
+                 alert("请上传图片");
+             }else{
+                 alert("上传成功");
+             }
+            }
+        }
+    </script>
+</head>
+<body>
+    选择文件：<input type="file" id="file" multiple>
+    <input type="button" onclick="fileUp()" value="显示文件信息"> <br>
+</body>
+</html>

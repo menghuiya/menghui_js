@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>作业3</title>
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js">
+		</script>
+	<script>
+		$(document).ready(function($)
+		{var video=$('#myVideo');
+		video.on('loadedmetadata',function()
+		{
+			$('.duration').text(video[0].duration);
+		});
+		video.on('timeupdate',function(){
+			$('.current').text(video[0].currentTime);
+		}
+		);}
+	);
+	</script>
+	</head>
+
+	<body>
+		<video id="myVideo" width="320" height="240" controls="controls" loop="loop">
+			<source src="sintel.ogv" type="video/ogv"></source>
+			<source src="video/movie1.mp4" type="video/mp4"></source>
+			<source src="img/sintel.webm" type="audio/webm"></source>
+			<object data="video/movie1.mp4" width="320" height="240">
+			</object>
+			<embed width="320" height="240" src="video/movie1.mp4"></embed>
+		<br />
+		请使用其它高版本浏览器尝试播放此视频</video>
+		
+		<div class="PROGRESStIME">
+			当前播放时长：<span class="current"></span>
+			视频时长：<span class="duration"></span>
+		</div>
+		<br />
+		<button onclick="document.getElementById('myVideo').play()">播放</button>
+		<button onclick="document.getElementById('myVideo').pause()">暂停</button>
+		<button onclick="document.getElementById('myVideo').volume+=0.2">音量+</button>
+		<button onclick="document.getElementById('myVideo').volume-=0.2">音量—</button>
+		<button onclick="document.getElementById('myVideo').muted=true">静音</button>
+		<button onclick="document.getElementById('myVideo').muted=false">取消静音</button>
+	</body>
+
+</html>

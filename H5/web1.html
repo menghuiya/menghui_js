@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+//		function savaStorge(id){
+//			var target =document.getElementById(id);
+//			var str = target.value;
+//			//保存数据 key value 
+//			sessionStorage.setItem("message",str);
+//		}
+//		function loadStorge(id){
+//			var target =document.getElementById(id);
+//			//读取数据
+//			var msg =sessionStorage.getItem("message"); //基于不关闭浏览器
+//			target.innerHTML = msg;
+//		}
+        function saveStorage(id){
+        	var target =document.getElementById(id);
+			var str = target.value;
+			localStorage.setItem("message",str);
+        }
+        function loadStorage(id){
+        	var target =document.getElementById(id);
+        	var msg = localStorage.getItem("message");
+        	target.innerHTML = msg;
+        }
+	</script>
+	<body>
+		<p id="msg"></p>
+		<input type="text" name="input" id="input"/>
+		<input type="button" name="" id="" value="保存数据" onclick="saveStorage('input')"/>
+		<input type="button" name="" id="" value="读取数据" onclick="loadStorage('msg')"/>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>作业4</title>
+
+	</head>
+
+	<body>
+		<audio id="my_audio" width="320" height="240" controls="controls">
+			<source src="music/mangzhong.mp3"></source>
+			您的浏览器不支持HTML5的音频
+		</audio>
+		<br>
+		<button onclick="document.getElementById('my_audio').play()">播放</button>
+		<button onclick="document.getElementById('my_audio').pause()">暂停</button>
+		<button onclick="document.getElementById('my_audio').volume+=0.2">音量+</button>
+		<button onclick="document.getElementById('my_audio').volume+=-0.2">音量—</button>
+		<button onclick="document.getElementById('my_audio').muted=true">静音</button>
+		<button onclick="document.getElementById('my_audio').muted=false">取消静音</button>
+	</body>
+
+</html>
