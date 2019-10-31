@@ -15,10 +15,31 @@
             font-size: 12px;
         }
         /* 使用伪类，设置禁用的按钮底色为#F5F5F5 */
+        button:disabled{
+            background: #F5F5F5;
+        }
         /* 使用伪类，设置非禁用的按钮底色为#00BFFF */
+        button:enabled{
+            background: #00BFFF;
+        }
         /* 使用伪类，设置单选或复选选中时的文字增加1px的边框，颜色为#00BFFF */
+        [type="radio"]:checked+span{
+            border: 1px solid #00BFFF;
+        }
+        [type="checkbox"]:checked+span{
+            border: 1px solid #00BFFF; 
+        }
         /* 使用伪类，设置当前焦点元素底色为：#87CEFA*/
+        input:focus{
+            background: #87CEFA;
+        }
         /* 使用伪类，设置链接hover时的颜色为#0000CD */
+        a:hover{
+            color:#0000CD  ;
+        }
+        
+        
+        
     </style>
 </head>
 

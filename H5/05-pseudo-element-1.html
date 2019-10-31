@@ -10,7 +10,16 @@
             width:500px;
         }
         /* 使用伪类，设置class为P1的元素第一行的背景色为灰色 */
+        .p1:first-line{
+            background: #cccccc;
+        }
         /* 使用伪类，设置class为P2的元素第一个字的背景色为灰色，前景色为白色，字号为32px,并加上一个1px的黑色边框 */
+        .p2::first-letter{
+            background: #cccccc;
+            color: white;
+            font-size: 32px;
+            border: 1px solid black;
+        }
         
     </style>
 </head>

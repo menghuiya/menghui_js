@@ -10,8 +10,13 @@
             width:500px;
         }
         /* 使用伪类，在a标签前插入 welcome */
+        a::before{
+            content: "welcome";
+        }
         /* 使用伪类，在a标签后插入！！ */
-        
+        a::after{
+            content: "!!";
+        }
     </style>
 </head>
 <body>
