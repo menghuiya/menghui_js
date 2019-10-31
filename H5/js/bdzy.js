@@ -9,6 +9,7 @@
 				}else{
 					mhqr.style.background="#CCCCCC";
 					mhqr.style.border="#CCCCCC";
+					mhqr.disabled=true;
 				}
 				
 			}
