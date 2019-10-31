@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height:200px;
+            width:200px;
+            display: inline-block;
+            border:1px solid;
+            margin:10px;
+        }
+        div[myattr*="attr"]{
+            font-size: 16px;
+        }
+        div[myattr^="other"]{
+            background:blue;
+        }
+        div[myattr$="attrodd"]{
+            background: #cccccc;;
+        }
+        /* 设置1号到7号div的字号为16px */
+        /* 设置0号和8号div底色为蓝色 */
+        /* 设置所有奇数编号的div背景色为灰色 */
+        
+    </style>
+</head>
+<body>
+    <div myattr="other-start">0号</div>
+    <div myattr = "1attrodd">1号</div>
+    <div myattr = "2attr">2号</div>
+    <div myattr = "3attrodd">3号</div>
+    <div myattr = "4attr">4号</div>
+    <div myattr = "5attrodd">5号</div>
+    <div myattr = "6attr">6号</div>
+    <div myattr = "7attrodd">7号</div>
+    <div myattr="other-end">8号</div>
+</body>
+</html>
