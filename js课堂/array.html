@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>splice()方法</title>
 </head>
-
+ 
 <body>
     <script>
         //通过扩展数组原型的splice()方法
@@ -31,9 +31,40 @@
         nums.insert(1, 20, 30, 40)
         console.log(nums);
 
-        nums.forEach(function(val){
-            console.log(val);
+        nums.forEach(function(val,index,arr){
+            // console.log(val);
+            arr[index]=val*2;
+        });
+        console.log(nums);
+        var sorted_nums  = nums.sort(function(a,b){
+            return b-a
         })
+        console.log(sorted_nums)
+
+        var mapped_nums=nums.map(function(value,index,arr){
+            return value % 2 ==0?"偶数":"奇数";
+        })
+        console.log(mapped_nums)
+        //every针对所有 some针对存在
+        var every=nums.every(function(value,index,arr){
+            return value%3==0;
+        });
+        console.log(every);
+        var some=nums.some(function(value,index,arr){
+            return value%3==0;
+        });
+        console.log(some);
+        var i=0;
+        var r=[];
+        nums.insert(3,100);
+        nums.insert(5,100);
+        while(true){
+            i= nums.indexOf(100,i);
+            if(i==-1) break;
+            r.push(i);
+            i++;120
+        }
+        console.log(r);
     </script>
 </body>
 
