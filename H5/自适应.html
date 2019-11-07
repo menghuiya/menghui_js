@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>两栏布局</title>
+    <style>
+        div {
+            height: 100px;
+            margin: 10px 0;
+        }
+
+        .div_l {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100px;
+            background: yellow;
+        }
+
+        .div_r {
+            position: absolute;
+            left: 100px;
+            top: 0;
+            right: 0;
+            width: 100%;
+            background: #09c;
+        }
+
+        .div1_r {
+            width: 100px;
+            float: right;
+            background: yellow;
+            
+        }
+
+        .div1_l {
+            background: #09c;
+            width: calc(100% - 100px);
+            float: left;
+        }
+        .mh11{
+            width: 200px;
+            height: 100px;
+            background: aquamarine;
+            border: 20px solid darkmagenta;
+            border:none;
+            white-space: nowrap;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="div_l">左侧固定</div>
+    <div class="div_r">右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应右侧自适应v右侧自适应右侧自适应右侧自适应右侧自适应v右侧自适应右侧自适应右侧自适应</div> <br><br><br><br><br>
+    <div class="div1_l">左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应左侧自适应</div>
+    <div class="div1_r">右侧固定</div>
+    <br> <br>  <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+   <img src="img/1.gif" alt="" srcset="">
+</body>
+
+</html>
