@@ -12,12 +12,13 @@
     <input type="button" onclick="clickBig()" value="放大"> 
     <input type="button" onclick="clickSmall()" value="缩小">  <br>
     <video controls="controls" id="video" width="500px" height="500px" autoplay>
-        <source src="video/makedu.wmv" type="video/wmv">
+        <source src="video/makedu.mp4" type="video/mp4">
         您的浏览器不适合此播放器
     </video>
+    <video src="video/cect.mp4" type="video/mp4" controls>11</video>
    
     <script>
-    var v=document.getElementById("video");
+    var v=document.getElementById("video"); //edge浏览器支持
     function clickOv(){
         if(v.paused){
             v.play();

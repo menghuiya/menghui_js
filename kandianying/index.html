@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>王猪儿看电影专用</title>
+    <style>
+        .dy {
+            width: 100%;
+            height: 270px;
+            display: flex;
+        }
+
+        ul>li {
+            display: inline-block;
+            font-size: 1em;
+            margin: 10px 20px;
+            border: 1px solid burlywood;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        header{
+            text-align: center;
+        }
+        iframe{
+            background: url(img/jiazai.gif)no-repeat;
+            background-size:contain;
+            background-size: 100% 100%;
+        }
+        #dijiji{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header><img src="img/logo.gif" alt="" width="200px" height="100px"></header>
+    <div>王猪儿专用播放器：当前正在播放 <span id="dijiji">您还没开始选集播放哦！</span></div>
+    <div class="dy">
+        <iframe src="" width="100%" height="100%" name="test" id="jishu">
+        </iframe>
+    </div>
+    <h3>选集播放</h3>
+    <ul>
+        <li onclick="setJi(this)">第一集</li>
+        <li onclick="setJi(this)">第二集</li>
+        <li onclick="setJi(this)">第三集</li>
+        <li onclick="setJi(this)">第四集</li>
+        <li onclick="setJi(this)">第五集</li>
+        <li onclick="setJi(this)">第六集</li>
+        <li onclick="setJi(this)">第七集</li>
+        <li onclick="setJi(this)">>第八集</li>
+        <li onclick="setJi(this)">第九集</li>
+        <li onclick="setJi(this)">第十集</li>
+        <li onclick="setJi(this)">第十一集</li>
+        <li onclick="setJi(this)">第十二集</li>
+        <li onclick="setJi(this)">第十三集</li>
+        <li onclick="setJi(this)">第十四集</li>
+        <li onclick="setJi(this)">第十五集</li>
+        <li onclick="setJi(this)">第十六集</li>
+    </ul>
+</body>
+<script>
+    function setJi(djj) {
+        var djjs = djj.innerHTML;
+        var jishu = document.getElementById("jishu").src;
+        var dijishu = document.getElementById("dijiji");
+        if(djjs=='第一集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzQ1MTUzMzA4.html?spm=a2h0j.11185381.listitem_page1.5~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第一集';
+        }
+        if(djjs=='第二集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzQ1NjgxODY4.html?spm=a2h0j.11185381.listitem_page1.5!2~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第二集';
+        }
+        if(djjs=='第三集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzQ4NjQyOTUy.html?spm=a2h0j.11185381.listitem_page1.5!3~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第三集';
+        }
+        if(djjs=='第四集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzQ5MTE3OTA4.html?spm=a2h0j.11185381.listitem_page1.5!4~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第四集';
+        }
+        if(djjs=='第五集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzUxOTUxMjA0.html?spm=a2h0j.11185381.listitem_page1.5!5~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第五集';
+        }
+        if(djjs=='第六集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzUyNDU4NDY4.html?spm=a2h0j.11185381.listitem_page1.5!6~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第六集';
+        }
+        if(djjs=='第七集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzU1MzY4NTYw.html?spm=a2h0j.11185381.listitem_page1.5!7~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第七集';
+        }
+        if(djjs=='第八集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzU1OTA1Njg4.html?spm=a2h0j.11185381.listitem_page1.5!8~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第八集';
+        }
+        if(djjs=='第九集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzU4OTM5ODI0.html?spm=a2h0j.11185381.listitem_page1.5!9~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第九集';
+        }
+        if(djjs=='第十集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzU5NDk4OTQ0.html?spm=a2h0j.11185381.listitem_page1.5!10~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第十集';
+        }
+        if(djjs=='第十一集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzYyODIxODcy.html?spm=a2h0j.11185381.listitem_page1.5!11~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第十一集';
+        }
+        if(djjs=='第十二集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzYzNDU1NTY0.html?spm=a2h0j.11185381.listitem_page1.5!12~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第十二集';
+        }
+        if(djjs=='第十三集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzczMDE1MjQw.html?spm=a2h0j.11185381.listitem_page1.5!13~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第十三集';
+        }
+        if(djjs=='第十四集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzczODgyODk2.html?spm=a2h0j.11185381.listitem_page1.5!14~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第十四集';
+        }
+        if(djjs=='第十五集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzc5MDk1MTAw.html?spm=a2h0j.11185381.listitem_page1.5!15~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第十五集';
+        }
+        if(djjs=='第十六集'){
+            test.location.href='https://vip.bljiex.com/?v=https://v.youku.com/v_show/id_XNzc5ODk5MDEy.html?spm=a2h0j.11185381.listitem_page1.5!16~A&&s=3db2af28fce211e3b2ad';
+            dijishu.innerHTML='第十六集';
+        }
+
+    }
+</script>
+
+</html>
