@@ -3,8 +3,8 @@ function saveStorage(id) {
     var data = document.getElementById(id).value;
     if(data.length>0){
         var time = new Date().getTime();
-    localStorage.setItem(time, data);
-    alert("数据已经储存");
+        localStorage.setItem(time, data);
+        alert("数据已经储存");
     }else{
         alert("请输入内容再点击") 
     }
@@ -52,7 +52,7 @@ function find() {
             var value = localStorage.getItem(key);
             var data = new Date();
             data.setTime(key);
-            var re = new RegExp("^\.*" + search_name + ".*");
+            var re = new RegExp(search_name);
             if (re.test(value) == true) {
                 result += "<tr><td>" + value + "</td><td>" + data + "</td></tr>";
             } else {

@@ -25,7 +25,7 @@
         function loadStorage(id){
         	var target =document.getElementById(id);
         	var msg = localStorage.getItem("message");
-        	target.innerHTML = msg;
+        	target.innerHTML += msg+"<br>";
         }
 	</script>
 	<body>
