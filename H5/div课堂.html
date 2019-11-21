@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
         }
-        div{
+
+        div {
             width: 40%;
             height: 300px;
             border: 1px darkblue solid;
             box-sizing: border-box;
             box-shadow: 5px 5px sandybrown;
         }
-        .div1{
+
+        .div1 {
             float: left;
             background: rebeccapurple;
         }
-        .div2{
+
+        .div2 {
             float: right;
             background: red;
         }
     </style>
 </head>
+
 <body>
-    <div class="div1"></div>
-    <div class="div2"></div>
+    <script>
+        var num = 100;
+        function f1() {
+            console.log(num); //输出为( 1 )
+            var num = 1000;
+            console.log(window.num); //输出为( 2
+            return num;
+        }
+        console.log(f1()); //输出为( 3 )
+        console.log("加的this.num时"+this.num); //输出为( 3 )  
+    </script>
+    <!-- 最开始执行的地方 这时候已经声明了num=100 在这个位置就相当于全局变量num=100
+    然后我们开始执行function内的代码  上面的步骤变成了下面的执行方式
+       var num;  声明了 但是为赋值，所以说是undefinde状态
+       console.log(num)   这个时候就会输出的是undefinde  因为会找最近的 发现最近的就是num  这个num是局部变量 还没定义
+       num=1000;  这时候才开始给num赋值  这时候 这个局部变量的num值为1000； 但是 请记住 我们的局部不会影响全局 所以全局变量的值还是 100
+       console.log(this.num); 这时候this 相当于window  使用的是全局变量  所以log出来的数值就是100  而不是1000 当我们改成
+                                                                                    console.log(num)的时候 就会发现 输出的1000  
+       return num; 返回的值 这个时候 返回一个num  换成了num=1000; 这个是function返回的值
+       这时候在函数外输出function  就是1000 -->
 </body>
+
 </html>
