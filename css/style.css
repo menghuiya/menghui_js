@@ -1,7 +1,12 @@
+body, ol, ul, dl, li, dt, dd, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, fieldset, legend, input, textarea,select{
+    margin: 0;
+    padding: 0;
+}
 body,html{
     margin: 0;
     padding: 0;
     background: rgba(245, 241, 241, 0.795);
+    height: 100%;
 }
 
 .top{
@@ -79,12 +84,138 @@ body,html{
     cursor: pointer;
 }
 
+.asidenav-all{
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(102, 99, 99, 0.226);
+    display: flex;
+}
+.asidesenav{
+    width: 50%;
+    height: 100%;
+    background: #fff;
+}
+.asidesenav-more{
+    width: 50%;
+    height: 100%;
+    background: rgba(102, 99, 99, 0.226);
+}
+.user{
+    width: 100%;
+    height: 140px;
+    background: url(../img/asides_bg.jpg) no-repeat center top;
+    background-size: 100% 100%;
+}
+.userlogo{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+.userlogo img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 10px 5px 0 10px;
+}
+.userlogo .user-name{
+    font-size: 18px;
+    color: #fff;
+    padding: 14px 0;
+    text-shadow: 3px 3px 2px #999;
+    flex: 1;
+}
+.cancel{
+    width: 25px;
+    height: 25px;
+    background: url(../img/cancel.png) no-repeat center top;
+    background-size: 100% 100%;
+    margin: 10px 0;
+}
+.user-btn{
+    width: 100%;
+    height: 60px;
+    margin-top: 16%;
+}
+.user-btn div{
+    width: 52px;
+    height: 23px;
+    border-radius: 3px;
+    color: #fff;
+    line-height: 23px;
+    font-size: 13px;
+    display: inline-block;
+    float: right;
+    margin-right: 6%;
+    background: rgba(0,0,0,.3);
+}
+.user-btn .login-btn{
+    display: flex;
+}
+.user-btn .login-btn i{
+    width: 20px;
+    height: 20px;
+    background: url(../img/user-login.png) no-repeat center top;
+    background-size: 100%;
+}
+.user-btn .regist-btn{
+    display: flex;
+}
+.user-btn .regist-btn i{
+    width: 20px;
+    height: 20px;
+    background: url(../img/user-regist.png) no-repeat center top;
+    background-size: 100%;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none
+    color: black;
+}
+.asidesnavs li{
+    margin: 20px 0;
+    
+}
+.asidesnavs i{
+    margin-left: 10px;  
+    margin-right: 5px;
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    line-height: 22px;
+    vertical-align: top;
+    font-size: 22px;
+}
+.asidesnavs .shouye{
+    background: url(../img/zhuye.png) no-repeat center top;
+    background-size: 100%;
+}
+.asidesnavs .article{
+    background: url(../img/article.png) no-repeat center top;
+    background-size: 100%;
+}
+.asidesnavs .aboutus{
+    background: url(../img/aboutus.png) no-repeat center top;
+    background-size: 100%;
+}
+.asidesnavs .getpc{
+    background: url(../img/pc.png) no-repeat center top;
+    background-size: 100%;
+}
+
+
 .zhanshi{
     width: 100%;
     height: 140px;
     background: url(../img/headbg.jpg) no-repeat center top;
     background-size: 100%;
     display: flex;
+    border-bottom: 2px dotted #036;
 }
 
 .zs-left{
