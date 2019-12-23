@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>点击弹窗效果</title>
+</head>
+<body>
+    <input type="button" value="点击弹窗" id="dj-btn">
+    <div class="alertmsg-box" style="display: none;">
+        <div class="alertmsg-div">
+            <h3>温馨提示：您还未登录</h3>
+            <span>是否登录？</span>
+            <div class="alertmsg-bnt-div">
+                <input type="button" value="确定" class="alertmsg-ok-btn">
+                <input type="button" value="取消" class="alertmsg-no-btn">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $('#dj-btn').click(function(){ 
+        $(".alertmsg-box").fadeToggle(-1000);
+    });
+    $('.alertmsg-no-btn').click(function(){ 
+        $(".alertmsg-box").fadeToggle(-1000);
+    });
+</script>
+</html>

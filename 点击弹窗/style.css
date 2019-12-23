@@ -1,0 +1,67 @@
+.alertmsg-box{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(145, 127, 127, 0.349);
+}
+.alertmsg-box .alertmsg-div{
+    position: relative;
+    margin: auto;
+    top:30%;
+    /* bottom:0; */
+    width: 95%;
+    /*height: 50%;*/
+    max-width: 400px;
+    max-height: 400px;
+    /* height: 200px; */
+    border-radius: 5px;
+    box-shadow: 2px,0,5px #ffffff;
+    display: flex;
+    flex-flow: column;
+    background: #ffffff;
+
+}
+.alertmsg-div h3{
+    text-align: center;
+    background:linear-gradient(to right, #8ae68a,#5ccdde,#b221ff,red,green);
+	-webkit-background-clip: text;
+	color: transparent; 
+}
+.alertmsg-div span{
+    text-align: center;
+    text-align: center;
+    background:linear-gradient(to right,red,#f11ace,#4b0372);
+	-webkit-background-clip: text;
+	color: transparent; 
+}
+.alertmsg-div .alertmsg-bnt-div{
+    display: flex;
+
+}
+.alertmsg-bnt-div input{
+    flex: 1;
+    margin: 20px;
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+}
+.alertmsg-bnt-div .alertmsg-ok-btn{
+    background: #337ab7;
+}
+.alertmsg-bnt-div .alertmsg-ok-btn:hover{
+    background:#2e6da4;
+}
+.alertmsg-bnt-div .alertmsg-no-btn{
+    background: #5bc0de;
+}
+.alertmsg-bnt-div .alertmsg-no-btn:hover{
+    background:#46b8da;
+}
