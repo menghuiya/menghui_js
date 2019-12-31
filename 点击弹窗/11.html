@@ -1,0 +1,380 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+    <meta name="applicable-device" content="pc" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="11.css">
+    <link rel="shortcut icon" href="http://www.biquge21.com/favicon.ico" type="image/x-icon" />
+    <base href="http://www.biquge21.com/" />
+    <script type="text/javascript">
+    var BOOK_URL = "http://www.biquge21.com/";
+    var WAP_URL = "http://m.biquge21.com/";
+    var SO_URL = "http://www.biquge21.com/so/";
+    </script>
+    <script type="text/javascript" src="http://www.biquge21.com/templets/tpl/js/common.js"></script>
+    <script type="text/javascript">
+    var hash = window.location.hash;
+    if (hash == "#pc") {
+        setcookie("KeepPC", "1");
+    }
+    var pc2wap = "http://m.biquge21.com/";
+    if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+        var KeepPC = getcookie('KeepPC');
+        if (!KeepPC) {
+            window.location.href = pc2wap;
+        } else {
+            pctip();
+        }
+    }
+    </script>
+    <link rel="stylesheet" type="text/css" href="http://www.biquge21.com/templets/tpl/css/common.css" />
+    <script type="text/javascript" src="http://www.biquge21.com/templets/tpl/js/ajax.js"></script>
+    
+    <script>
+    (function() {
+        var bp = document.createElement("script");
+        var curProtocol = window.location.protocol.split(":")[0];
+        if (curProtocol === "https") {
+            bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+        } else {
+            bp.src = "http://push.zhanzhang.baidu.com/push.js";
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+    
+</head>
+
+<body id="Body">
+    <!--header开始-->
+    <div id="header">
+        <div class="money notop">
+            <center>
+                <script type="text/javascript" src="http://www.biquge21.com/x/x.php?37.html"></script>
+            </center>
+        </div>
+        <div class="ywtop">
+            <div class="ywtop_con">
+                <div class="ywtop_sethome"><a href="http://m.biquge21.com/" onclick="pctip(1)" target="_blank">手机自适应版</a> / <a href="http://www.biquge21.com/wap_touch/" onclick="pctip(1)" target="_blank">触屏版</a> / <a href="http://www.biquge21.com/wap_speed/" onclick="pctip(1)" target="_blank">极速版</a></div>
+                <div class="ywtop_addfavorite"><a href="javascript:addBookmark()">收藏新笔趣阁</a></div>
+                <div class="nri">
+                    <ul id="loginInfo">
+                        <li><img style="position:relative;top:1px;" src="http://www.biquge21.com/templets/tpl/image/loading.gif" />&nbsp;登陆信息加载中...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header">
+            <div class="header_logo">
+                <a href="http://www.biquge21.com/" title="新笔趣阁"><img src="http://www.biquge21.com/templets/tpl/image/logo.png" alt="新笔趣阁"></a>
+            </div>
+            <div class="search">
+                <div class="searchBox">
+                    <div class="searchform">
+                        <input type="hidden" name="typeid" id="typeid" value="" />
+                        <input name="key" class="searchword" type="text" id="key" placeholder="请输入您要搜索的内容" onclick="this.select()" />
+                        <input type="submit" class="s_btn" id="s_btn" value="搜索" onclick="SoNow()" />
+                    </div>
+                    <div class="hotword">
+                        <h3>热门搜索：</h3> 
+                    </div>
+                </div>
+            </div>
+            <div class="userpanel">
+                <font color="red">最新推荐：</font>
+                <a href="http://www.biquge21.com/yanwangjiadao/" title="阎王驾到" target="_blank"><font color="red">阎王驾到</font></a>、<a href="http://www.biquge21.com/wushenzhuzai/" title="武神主宰" target="_blank">武神主宰</a>、<a href="http://www.biquge21.com/jilu/" title="即鹿" target="_blank">即鹿</a>、<a href="http://www.biquge21.com/nvzongcaideyaobingwang/" title="女总裁的逍遥兵王" target="_blank">女总裁的逍遥兵王</a>
+            </div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="http://www.biquge21.com/">首页</a></li>
+                <li><a href="http://www.biquge21.com/member/?fav.html" title="我的书架">我的书架</a></li>
+                <li><a href="http://www.biquge21.com/qihuan.html" title="奇幻·玄幻">奇幻·玄幻</a></li><li><a href="http://www.biquge21.com/wuxia.html" title="武侠·仙侠">武侠·仙侠</a></li><li><a href="http://www.biquge21.com/dushi.html" title="都市·青春">都市·青春</a></li><li><a href="http://www.biquge21.com/lishi.html" title="历史·穿越">历史·穿越</a></li><li><a href="http://www.biquge21.com/youxi.html" title="游戏·竞技">游戏·竞技</a></li><li><a href="http://www.biquge21.com/kehuan.html" title="科幻·灵异">科幻·灵异</a></li>
+                <li><a href="http://www.biquge21.com/paihang/" title="排行榜">排行榜</a></li>
+                <li><a href="http://www.biquge21.com/shuku/" title="全部小说">全部小说</a></li>
+                <li class="Readed" onmouseover="showReaded();this.className='Readed cur'" onmouseout="this.className='Readed'"><a class="tt" href="javascript:" title="阅读记录">阅读记录:<span id="ReadedHere"><img src="http://www.biquge21.com/templets/tpl/image/loading.gif" /></span></a>
+                    <div class="box" id="Readed">
+                        <p><img id="ReadedIMG" style="position:relative;top:1px;" src="http://www.biquge21.com/templets/tpl/image/loading.gif" />&nbsp;<em id="readyTIP">加载中...</em></p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="money">
+            <center>
+                <!-- <script type="text/javascript" src="http://www.biquge21.com/x/x.php?38.html"></script> -->
+            </center>
+        </div>
+    </div>
+    <!--header结束-->
+<!--body开始-->
+<div class="mh-404page-box">
+    <div class="mh-404page-div1">
+        <div class="mh-404page-div1-left">
+            <p>"真的很抱歉，我们搞丢了页面........"</p>
+            <h2>要不去首页看看？</h2>
+            <div class="mh-404page-div1-left-first">
+                <div class="mh-404page-btn">
+                    <span>立即访问</span><i></i>
+                </div>
+            </div>
+        </div>
+        <div class="mh-404page-div1-right">
+            <img src="C:\Users\menghui\Documents\website\点击弹窗\bg.png" alt="">
+        </div>
+
+    </div>
+    <div class="mh-404page-div2">
+        <h1>亲！你所请求的页面已转移，↓请重新搜索，↓...或推荐阅读以下小说！！</h1>
+        <div class="mh-404page-div2-search">
+            <input type="text" placeholder="可搜索书名和作者，请您少字也别输错别字" class="mh-404page-div2-search-left">
+            <input type="button" value="搜您想要" class="mh-404page-div2-search-right">
+        </div>
+    </div>
+</div>
+<div id="wrapper">
+    <div id="main">
+        <div id="hotcontent">
+            <div class="l">
+            	
+            </div>
+            <div class="r">
+                <h2>书友推荐榜</h2>
+                <ul><li><span class="s1">[武侠]</span><span class="s2"><a href="http://www.biquge21.com/yipinxiuxian/" title="一品修仙" target="_blank">一品修仙</a></span><span class="s5">不放心油条</span></li><li><span class="s1">[奇幻]</span><span class="s2"><a href="http://www.biquge21.com/yanwangjiadao/" title="阎王驾到" target="_blank">阎王驾到</a></span><span class="s5">绝品杜少</span></li><li><span class="s1">[历史]</span><span class="s2"><a href="http://www.biquge21.com/wushenzhuzai/" title="武神主宰" target="_blank">武神主宰</a></span><span class="s5">暗魔师</span></li><li><span class="s1">[历史]</span><span class="s2"><a href="http://www.biquge21.com/jilu/" title="即鹿" target="_blank">即鹿</a></span><span class="s5">赵子曰</span></li><li><span class="s1">[都市]</span><span class="s2"><a href="http://www.biquge21.com/nvzongcaideyaobingwang/" title="女总裁的逍遥兵王" target="_blank">女总裁的逍遥兵王</a></span><span class="s5">君已老</span></li><li><span class="s1">[历史]</span><span class="s2"><a href="http://www.biquge21.com/dadangjiabuhaoliao/" title="大当家不好了" target="_blank">大当家不好了</a></span><span class="s5">雨天下雨</span></li><li><span class="s1">[都市]</span><span class="s2"><a href="http://www.biquge21.com/quanzhichushi/" title="全职厨师" target="_blank">全职厨师</a></span><span class="s5">花羽少</span></li><li><span class="s1">[历史]</span><span class="s2"><a href="http://www.biquge21.com/woshiyigeyuanshiren/" title="我是一个原始人" target="_blank">我是一个原始人</a></span><span class="s5">墨守白</span></li></ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="money">
+            <center>
+                <script type="text/javascript" src="http://www.biquge21.com/x/x.php?39.html"></script>
+            </center>
+        </div>
+        <div class="novelslist">
+		
+			
+            <div class="content">
+                <h2>奇幻·玄幻</h2>
+                
+            <div class="top">
+                <div class="image"><img src="http://www.biquge21.com/uploads/thumb/191228/15604.jpg" alt="阎王驾到" width="67" height="82"></div>
+                <dl><dt><a href="http://www.biquge21.com/yanwangjiadao/" title="阎王驾到" target="_blank">阎王驾到</a></dt>
+                    <dd>打赌遭雷劈，本以为小命玩完，却意外获得阴阳眼，从此走向人生巅峰。“云哥！人家找你有事商量，回家说好不...</dd>
+                </dl>
+                <div class="clear"></div>
+            </div>
+            <ul>
+			<li><a href="http://www.biquge21.com/zhizunjianhuang/" title="至尊剑皇" target="_blank">至尊剑皇</a>/半步沧桑</li><li><a href="http://www.biquge21.com/zhizhiyenvxuanshou/" title="LCK之职业女选手" target="_blank">LCK之职业女选手</a>/可乐中毒</li><li><a href="http://www.biquge21.com/qiannianwanli/" title="千年万里" target="_blank">千年万里</a>/水金城</li><li><a href="http://www.biquge21.com/manweilidelingnengbaifenbai/" title="漫威里的灵能百分百" target="_blank">漫威里的灵能百分百</a>/冀心</li><li><a href="http://www.biquge21.com/xuanhundaozhang/" title="玄浑道章" target="_blank">玄浑道章</a>/误道者</li><li><a href="http://www.biquge21.com/siyuchenfu/" title="四宇沉浮" target="_blank">四宇沉浮</a>/逍遥变</li><li><a href="http://www.biquge21.com/tiancezhidao/" title="天策之道" target="_blank">天策之道</a>/熊渣</li><li><a href="http://www.biquge21.com/ruyasuihedewobushimotou/" title="儒雅随和的我不是魔头" target="_blank">儒雅随和的我不是魔头</a>/李古丁</li><li><a href="http://www.biquge21.com/eguaotiantuludewo/" title="Re，骨傲天屠戮的我" target="_blank">Re，骨傲天屠戮的我</a>/虚空人形</li><li><a href="http://www.biquge21.com/fengkuanglianyaoxitong/" title="疯狂炼妖系统" target="_blank">疯狂炼妖系统</a>/寂寞阿三</li><li><a href="http://www.biquge21.com/gaishi/" title="盖世" target="_blank">盖世</a>/逆苍天</li><li><a href="http://www.biquge21.com/wozaibilanxiujianniang/" title="我在碧蓝修舰娘" target="_blank">我在碧蓝修舰娘</a>/满身盐的鱼</li></ul>
+            </div>
+			
+			
+            <div class="content">
+                <h2>武侠·仙侠</h2>
+                
+            <div class="top">
+                <div class="image"><img src="http://www.biquge21.com/uploads/empty/21.jpg" alt="快穿之养老攻略" width="67" height="82"></div>
+                <dl><dt><a href="http://www.biquge21.com/kuaichuanzhiyanglaogonglue/" title="快穿之养老攻略" target="_blank">快穿之养老攻略</a></dt>
+                    <dd>【无CP快穿文】作为一个资深任务者，乔木实在厌烦了勾心斗角，以及跟男女主之间的感情纠扯了，于是积分一够...</dd>
+                </dl>
+                <div class="clear"></div>
+            </div>
+            <ul>
+			<li><a href="http://www.biquge21.com/shanyexianyun/" title="山野闲云" target="_blank">山野闲云</a>/来不及忧伤</li><li><a href="http://www.biquge21.com/morixingdongzu/" title="末日行动组" target="_blank">末日行动组</a>/清阳君</li><li><a href="http://www.biquge21.com/wuxiashengwei/" title="武侠升维" target="_blank">武侠升维</a>/呓梦痴人</li><li><a href="http://www.biquge21.com/taixuhualongpian/" title="太虚化龙篇" target="_blank">太虚化龙篇</a>/六月观主</li><li><a href="http://www.biquge21.com/zhanglaobanxiuxianjingshangji/" title="张老板修仙经商记" target="_blank">张老板修仙经商记</a>/梦游江湾</li><li><a href="http://www.biquge21.com/yunzhongcangfengji/" title="云中藏锋记" target="_blank">云中藏锋记</a>/渡舟野客</li><li><a href="http://www.biquge21.com/mouguangtoudejianghu/" title="某光头的江湖" target="_blank">某光头的江湖</a>/闲人不二</li><li><a href="http://www.biquge21.com/liaozhaizhijiayouyaoqi/" title="聊斋之家有妖妻" target="_blank">聊斋之家有妖妻</a>/硕鼠肥</li><li><a href="http://www.biquge21.com/feiqiubianouzhilu/" title="非酋变欧之路" target="_blank">非酋变欧之路</a>/似水年华流年</li><li><a href="http://www.biquge21.com/shenfengxing/" title="神封星穹" target="_blank">神封星穹</a>/懒妖大人</li><li><a href="http://www.biquge21.com/congliaozhaikaishishourongzhutian/" title="从聊斋开始收容诸天" target="_blank">从聊斋开始收容诸天</a>/稀碎玻璃渣</li><li><a href="http://www.biquge21.com/qianrenwushuang/" title="前任无双" target="_blank">前任无双</a>/跃千愁</li></ul>
+            </div>
+			
+			
+            <div class="content border">
+                <h2>都市·青春</h2>
+                
+            <div class="top">
+                <div class="image"><img src="http://www.biquge21.com/uploads/thumb/191228/15600.jpg" alt="女总裁的逍遥兵王" width="67" height="82"></div>
+                <dl><dt><a href="http://www.biquge21.com/nvzongcaideyaobingwang/" title="女总裁的逍遥兵王" target="_blank">女总裁的逍遥兵王</a></dt>
+                    <dd>战神“孤狼”夏雨，奉命执行最后一次任务，却意外成了绝色女总裁的未婚夫，并与几位美女一起合租。从此开始...</dd>
+                </dl>
+                <div class="clear"></div>
+            </div>
+            <ul>
+			<li><a href="http://www.biquge21.com/quanzhichushi/" title="全职厨师" target="_blank">全职厨师</a>/花羽少</li><li><a href="http://www.biquge21.com/yexianshengheyixiaojie/" title="夜先生和亦小姐" target="_blank">夜先生和亦小姐</a>/宾果喵喵</li><li><a href="http://www.biquge21.com/zhongshengdinvguilai/" title="重生嫡女归来" target="_blank">重生嫡女归来</a>/鬼月幽灵</li><li><a href="http://www.biquge21.com/bixiadelingyigeshijie/" title="笔下的另一个世界" target="_blank">笔下的另一个世界</a>/草席</li><li><a href="http://www.biquge21.com/wanhuaishijiedechuidiaozhe/" title="玩坏世界的垂钓者" target="_blank">玩坏世界的垂钓者</a>/为情成痴</li><li><a href="http://www.biquge21.com/laojiezhongdepizi/" title="老街中的痞子" target="_blank">老街中的痞子</a>/卸甲老卒</li><li><a href="http://www.biquge21.com/xiaohuadetieshengaoshou/" title="校花的贴身高手" target="_blank">校花的贴身高手</a>/鱼人二代</li><li><a href="http://www.biquge21.com/dayilingran/" title="大医凌然" target="_blank">大医凌然</a>/志鸟村</li><li><a href="http://www.biquge21.com/huayuzhixiaosaquanshijie/" title="华娱之笑洒全世界" target="_blank">华娱之笑洒全世界</a>/老猫三千问</li><li><a href="http://www.biquge21.com/shenjinaiba/" title="神级奶爸" target="_blank">神级奶爸</a>/单王张</li><li><a href="http://www.biquge21.com/quanqiuwushen/" title="全球武神" target="_blank">全球武神</a>/翻滚的柚子</li><li><a href="http://www.biquge21.com/yeshouqiuwangkesita/" title="野兽球王科斯塔" target="_blank">野兽球王科斯塔</a>/元谋</li></ul>
+            </div>
+			<div class="clear"></div></div>
+				        <div class="money">
+				            <center>
+				                <script type="text/javascript" src="http://www.biquge21.com/x/x.php?40.html"></script>
+				            </center>
+				        </div>
+						<div class="novelslist">
+			
+            <div class="content">
+                <h2>历史·穿越</h2>
+                
+            <div class="top">
+                <div class="image"><img src="http://www.biquge21.com/uploads/thumb/191228/15602.jpg" alt="武神主宰" width="67" height="82"></div>
+                <dl><dt><a href="http://www.biquge21.com/wushenzhuzai/" title="武神主宰" target="_blank">武神主宰</a></dt>
+                    <dd>天武大陆一代传奇秦尘，因好友背叛意外陨落武域。三百年后，他转生在一个受尽欺凌的王府私生子身上，利用前...</dd>
+                </dl>
+                <div class="clear"></div>
+            </div>
+            <ul>
+			<li><a href="http://www.biquge21.com/jilu/" title="即鹿" target="_blank">即鹿</a>/赵子曰</li><li><a href="http://www.biquge21.com/dadangjiabuhaoliao/" title="大当家不好了" target="_blank">大当家不好了</a>/雨天下雨</li><li><a href="http://www.biquge21.com/qiuhuozaijinchaomonian/" title="求活在金朝末年" target="_blank">求活在金朝末年</a>/老墨成仙</li><li><a href="http://www.biquge21.com/woshiyigeyuanshiren/" title="我是一个原始人" target="_blank">我是一个原始人</a>/墨守白</li><li><a href="http://www.biquge21.com/sanguozhifengzhaohuan/" title="三国之巅峰召唤" target="_blank">三国之巅峰召唤</a>/流香千古</li><li><a href="http://www.biquge21.com/jiemeihuadezuiqiangbingwang/" title="姐妹花的最强兵王" target="_blank">姐妹花的最强兵王</a>/江城子</li><li><a href="http://www.biquge21.com/nichengchangjuxing/" title="逆成长巨星" target="_blank">逆成长巨星</a>/葛洛夫街兄弟</li><li><a href="http://www.biquge21.com/woniangzitianxiadiyi/" title="我娘子天下第一" target="_blank">我娘子天下第一</a>/小小一蚍蜉</li><li><a href="http://www.biquge21.com/eryekuaiqujiunilaopo/" title="二爷，快去救你老婆" target="_blank">二爷，快去救你老婆</a>/好苗苗</li><li><a href="http://www.biquge21.com/shaosong/" title="绍宋" target="_blank">绍宋</a>/榴弹怕水</li><li><a href="http://www.biquge21.com/woduosheliaodonghuangtaiyi/" title="我夺舍了东皇太一" target="_blank">我夺舍了东皇太一</a>/烟雨青风</li><li><a href="http://www.biquge21.com/songdi/" title="宋缔" target="_blank">宋缔</a>/我欲乘风归</li></ul>
+            </div>
+			
+			
+            <div class="content">
+                <h2>游戏·竞技</h2>
+                
+            <div class="top">
+                <div class="image"><img src="http://www.biquge21.com/uploads/thumb/191228/15507.jpg" alt="无限灵药圃" width="67" height="82"></div>
+                <dl><dt><a href="http://www.biquge21.com/wuxianlingyaopu/" title="无限灵药圃" target="_blank">无限灵药圃</a></dt>
+                    <dd>无限神系在众神的肆扰下建立，东方仙界、北欧神系、埃及神系、奥林匹斯神系……他们都在猎杀我们。蟠桃树、...</dd>
+                </dl>
+                <div class="clear"></div>
+            </div>
+            <ul>
+			</ul>
+            </div>
+			
+			
+            <div class="content border">
+                <h2>科幻·灵异</h2>
+                
+            <div class="top">
+                <div class="image"><img src="http://www.biquge21.com/uploads/thumb/191228/15555.jpg" alt="氪金成仙" width="67" height="82"></div>
+                <dl><dt><a href="http://www.biquge21.com/jinchengxian/" title="氪金成仙" target="_blank">氪金成仙</a></dt>
+                    <dd>他在淘宝上面卖过法宝，还参加过双十一飞剑大促，一不小心成了销售冠军。他在美团里卖过醋溜龙肝，清蒸凤髓...</dd>
+                </dl>
+                <div class="clear"></div>
+            </div>
+            <ul>
+			<li><a href="http://www.biquge21.com/jiangshixiehuang/" title="僵尸邪皇" target="_blank">僵尸邪皇</a>/拼命的牛</li><li><a href="http://www.biquge21.com/wangzhefengbao/" title="王者风暴" target="_blank">王者风暴</a>/古剑锋</li><li><a href="http://www.biquge21.com/zhengdaozhutianzhidaozun/" title="证道诸天之道尊" target="_blank">证道诸天之道尊</a>/三喵道尊</li><li><a href="http://www.biquge21.com/moshiquannengheikejixitong/" title="末世全能黑科技系统" target="_blank">末世全能黑科技系统</a>/凉茶煮酒</li><li><a href="http://www.biquge21.com/honghuangzhitaiqingwendao/" title="洪荒之太清问道" target="_blank">洪荒之太清问道</a>/归海云轩</li><li><a href="http://www.biquge21.com/jiuhunzhuzai/" title="九魂主宰" target="_blank">九魂主宰</a>/盘古</li><li><a href="http://www.biquge21.com/xiyoulushangyouyaomo/" title="西游路上有妖魔" target="_blank">西游路上有妖魔</a>/酒不断</li><li><a href="http://www.biquge21.com/longzhuyanyi/" title="龙珠演义" target="_blank">龙珠演义</a>/翼赤火</li><li><a href="http://www.biquge21.com/daorenfu/" title="道人赋" target="_blank">道人赋</a>/莫藏拙</li><li><a href="http://www.biquge21.com/wangzherongyaozhinvshenzhishang/" title="王者荣耀之女神至上" target="_blank">王者荣耀之女神至上</a>/广州好地方</li><li><a href="http://www.biquge21.com/bianchengshenshouquliulang/" title="变成神兽去流浪" target="_blank">变成神兽去流浪</a>/天璇东</li><li><a href="http://www.biquge21.com/silingshenhua/" title="死灵神话" target="_blank">死灵神话</a>/羽民</li></ul>
+            </div>
+			<div class="clear"></div>
+		</div>
+        <div class="money">
+            <center>
+                <script type="text/javascript" src="http://www.biquge21.com/x/x.php?41.html"></script>
+            </center>
+        </div>
+        
+    </div>
+    <div id="firendlink">
+        友情连接：<a href="http://www.9ixsw.com" title="久爱小说网" target="_blank">久爱小说网</a><a href="http://www.wix4.com" title="维斯资源网" target="_blank">维斯资源网</a><a href="http://www.52mhzy.cn" title="梦回辅助论坛" target="_blank">梦回辅助论坛</a>
+    </div>
+</div>
+<!--body结束-->
+<!-- mark Start -->
+<div class="mark-box" id="mark-box">
+    <div class="bg" onclick="closeMark()"></div>
+    <div class="Mark-body" id="Mark-body">
+        <div class="close" onclick="closeMark()">X</div>
+        <div class="d-title" id="d-title"></div>
+        <div class="mark-body" id="mark-body"></div>
+        <div class="bg"></div>
+    </div>
+</div>
+<script type="text/javascript">
+// 登陆注册出错时返回
+reLogin();
+</script>
+<!-- mark End -->
+<script type="text/javascript">
+// 头部高度
+if ($id('header')) {
+    var Header = $id('header').offsetHeight;
+} else {
+    var Header = 0;
+}
+// 导航高度
+if ($id('Nav')) {
+    var Nav = $id('Nav').offsetHeight;
+} else {
+    var Nav = 0;
+}
+if ($id('Float')) {
+    var className = $id('Float').className;
+    // 开始浮动
+    var Float2Top = $id('Float').offsetTop;
+    // 浮动高度
+    var Float = $id('Float').offsetHeight;
+    // 结束浮动
+    var LRTop = $id('LR').offsetTop;
+    var FatherBottom2Top = LRTop + $id('LR').offsetHeight;
+    // 修复高度变化
+    setTimeout(function() {
+        FatherBottom2Top = LRTop + $id('LR').offsetHeight;
+    }, 3000);
+}
+</script>
+<!--footer开始-->
+<div class="money">
+    <center>
+        <script type="text/javascript" src="http://www.biquge21.com/x/x.php?49.html"></script>
+    </center>
+</div>
+<div class="footer" id="footer">
+    <div class="footer_link">热门推荐：</div>
+    <div class="footer_cont">
+        <p>小说网上所有的小说均由网友收集整理，纯属个人爱好并供广大网友交流学习之用，作品版权均为原版权人所有。<br />如果版权所有人认为在本站放置您的作品会损害您的利益请指出，小说网在核实之后会立即删除。<br />Copyright 2000-2019 biquge21.com Inc. all Rights Reserved</p>
+        <p>&nbsp;&nbsp;<div style="display:none">
+<script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1278264442&web_id=1278264442"></script>
+</div>
+<script>
+(function(){
+var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+document.write('<script src="' + src + '" id="sozz"><\/script>');
+})();
+</script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+</p>
+    </div>
+</div>
+<a href="javascript:scroller('header',200);" class="pageScroll" id="pageScroll">Top</a>
+<div class="TIP" id="TIP"></div>
+<div class="MAK" id="MAK"></div>
+<!--footer结束-->
+<div id="loginData" style="display:none;">
+    <script>
+    document.write("<script src='http://www.biquge21.com/hi.login.php?my=pc&t=" + (new Date).getTime() + "'></s" + "cript>")
+    </script>
+</div>
+<script type="text/javascript">
+$id('loginInfo') ? $id('loginInfo').innerHTML = $id('loginData').innerHTML : '';
+$id('loginData').innerHTML = '';
+</script>
+<script type='text/javascript'>
+//阅读记录
+showReaded('single');
+//相关数据
+MissData('bookurl', '1000');
+MissData('mysql2disk');
+MissData('DelCache');
+make_html();
+upbaidu();
+</script>
+<script type="text/javascript" src="http://www.biquge21.com/x/x.php?56.html"></script>
+</body>
+
+</html>
+<script type="text/javascript">
+sitemap();
+</script>
