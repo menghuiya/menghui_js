@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ //param:   method可选参数：encodeStr(加密)与decodeStr(解密)
+var codeStr=(method,str)=>{
+    var hit = method=='encodeStr'?'*':'/';
+    return [...str].map((item)=>{
+        return String.fromCharCode(eval(item.charCodeAt()+hit+10));
+    }).join('');
+}
+console.log(codeStr('encodeStr','SDSAH'));
+
+//凯撒密码
+function strEncrypt(str) {
+  var sault = 3;
+  return str
+    .split("")
+    .map(c => {
+      return String.fromCharCode(c.charCodeAt(0) + sault);
+    })
+    .join("");
+}
+function strDecrypt(str) {
+  var sault = 3;
+  return str
+    .split("")
+    .map(c => {
+      return String.fromCharCode(c.charCodeAt(0) - sault);
+    })
+    .join("");
+}
+
+var str = "hello, world";
+console.log(strEncrypt(str));
+console.log(strDecrypt(strEncrypt(str)));
+</script>
+</html>
