@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        //正则暂且不考虑
+        //使用asc码来进行判断charCodeAt()方法 获取十进制asc码 
+        function changeStr(str){
+            let arr=str.split("");  //分割字符串成数组
+            let newStr="";
+            for(let i=0;i<arr.length;i++){
+                let acsNum=arr[i].charCodeAt(); //获取asc码
+                if(acsNum>64&&acsNum<91){  //判断 此时为大写
+                    newStr+= newCode=arr[i].toLowerCase()
+                }else{
+                    newStr+= newCode=arr[i].toUpperCase()
+                }
+            }
+            return newStr;
+        }
+    </script>
+</html>
