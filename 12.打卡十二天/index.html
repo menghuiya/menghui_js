@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+    <script>
+        var searchURL = "?mod=forum&searchid=2&orderby=lastpost&ascdesc=desc&searchsubmit=yes&kw=1"
+        searchURL = searchURL.substring(1, searchURL.length);
+        let searchUrlArr=searchURL.split("&")
+        for(let i=0;i<searchUrlArr.length;i++){
+            let searchUrlMsgArr = searchUrlArr[i].split("=");
+            console.log(searchUrlMsgArr[0]+"==>%c"+searchUrlMsgArr[1],'color:red;')
+        }
+    </script>
+</html>
