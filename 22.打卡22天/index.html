@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    // var person = new Person('梦回', 20);
+    // console.log(person); // Person {name: "梦回", age: 20}
+    // person.sayHello(); // 我叫梦回, 今年20岁了
+    // var result = {};
+    // Person.call(result, '小明', 20);
+    // result; // {name: "小明", age: 20}
+
+    // function Person(name, age){
+    //     this.name = name;
+    //     this.age = age;
+    //     return name
+    // }
+    // var person = new Person('张三', 20);
+    // console.log(person); // ?
+    // var person1 = new Person(['张三'], 20);
+    // console.log(person); // ?
+    // function Person(name,age,job){
+	// this.name = name;
+	// this.age = age;
+	// this.job = job;
+	// this.sayName = function() {
+	// 	alert(this.name)
+	// }
+    // }
+    // let New = function NEW_OBJECT(P){
+    // var obj={};
+    // let arg = Array.prototype.slice.call(arguments,1)
+    // obj.__proto__=P.prototype;
+    // obj.__proto__.constructor=P;
+    // P.apply(obj,arg)
+    // return obj;
+    
+    // }
+    // let _obj = New(Person,"Polo")
+
+    // function A(){
+    //     this.a= 1;
+    //     this.aa=11;
+    // }
+    // A.prototype={
+    //     c:function(){console.log(this.a);}
+    // }
+
+
+    // function ne(func){//模仿 new 产生实例
+    //     var obj = {}; 
+    //    func.call(obj);
+    //     obj.__proto__ = {};
+    //     for(var param in func.prototype){ 
+    //         obj.__proto__[param] = func.prototype[param]; 
+    //     };
+    //     return obj;
+    // }
+
+    // var a = ne(A);
+    // console.log(a);
+    
+    
+    // var newA = new A();
+    // console.log(new A);
+    
+    // new 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象类型之一
+    function Person(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    Person.prototype.sayHello=function(){
+        console.log('我是'+this.name+',今年'+this.age+'岁了');
+    }
+    function Test(value){
+        this.value = value;
+        console.log(this);
+        return [1,2,3];
+    }
+    function likeNew(fn){
+        var result = Object.create(fn.prototype);
+        var args = [].slice.call(arguments,1);
+        var fnResult = fn.apply(result, args);
+        if(typeof fnResult === 'object' || typeof fnResult === 'function' && fnResult !== null){
+            return fnResult
+        }
+        return result
+    }
+    
+    var person = likeNew(Person, '小明', 20); 
+    console.log(person); // Person {name: "小明", age: 20}
+    person.sayHello(); // 我叫小明, 今年20岁了
+    
+    //原始类型 number
+    var number = likeNew(Test, 1);
+    console.log(number); // Test {value: 1}
+    
+    var Null = likeNew(Test, null);
+    console.log(Null); // Test {value: null}
+    
+    //引用类型
+    var object = likeNew(Test, {});
+    console.log(object); // {}
+    
+    var numberObject = likeNew(Test, new Number(1));
+    console.log(numberObject); // Number{1}
+
+    //参考原文地址：https://blog.csdn.net/weixin_34026276/article/details/91392749
+</script>
+</html>
