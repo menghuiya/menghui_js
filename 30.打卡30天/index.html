@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //只考虑空格不考虑大小写
+    function checkStrIsRe(str){
+        let strArr=str.toLowerCase().split(''); //分割字符串为数组       
+        let sku=1; //定义一个判断字符标识为1
+        //定义i,j 从数组开头开始和结尾开始挨个比较一遍
+        for(let i=0,j=strArr.length-1;i<strArr.length;i++,j--){
+            if(strArr[i]!==strArr[j]){
+                sku=0;
+                break;  //倘若比对不成功时则改变判断标识并且跳出循环
+            }
+        }
+        if(sku==1){
+            return true
+        }else{
+            return false
+        }
+    }
+    
+    //考虑大小写与空格
+    //倘若要考虑头尾的空格字符，则去掉头尾空格字符使用trim() 方法
+    function checkStrIsRes(str){
+        //使用reverse()从尾部排序数组再重新重组成字符串进行比较
+        let newStr=str.split("").reverse().join("");
+        if(str===newStr){
+            return true
+        }else{
+            return false
+        }
+    }
+</script>
+</html>
