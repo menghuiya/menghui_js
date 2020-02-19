@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h2>创建一个Vue实例</h2>    
+    <!-- 创建方法：
+    var vm=new Vue({
+        //选项
+    }) -->
+    <!-- 根实例
+└─ TodoList
+   ├─ TodoItem
+   │  ├─ DeleteTodoButton
+   │  └─ EditTodoButton
+   └─ TodoListFooter
+      ├─ ClearTodosButton
+      └─ TodoListStatistics -->
+      
+      <div id="app">
+          <p>{{foo}}</p>
+          <!-- 这里的foo 不会更新 -->
+          <button v-on:click="foo='baz'">改变</button>
+      </div>
+
+      <h3>前缀 $ 定义的属性区分</h3> <hr>
+      <div id="example">{{a}}</div>
+</body>
+<script src="js/1.js"></script>
+</html>

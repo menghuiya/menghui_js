@@ -1,10 +1,23 @@
+var app2=new Vue({
+    el:'#app-2',
+    data:{
+        message:'页面加载与'+new Date().toDateString()
+    }
+})
+var app3=new Vue({
+    el:'#app-3',
+    data:{
+        seen:true
+    }
+})
 var app4 = new Vue({
     el: '#app-4',
     data: {
         todos: [
             { text: '学习 JavaScript' },
             { text: '学习 Vue' },
-            { text: '整个牛项目' }
+            { text: '整个牛项目' },
+            {text:"梦回最帅"}
         ]
 
     }
@@ -25,4 +38,23 @@ var app6 = new Vue({
     data: {
       message: '梦回最帅'
     }
-  })
+})
+
+//定义名为todo-item的新组件
+Vue.component('todo-item',{
+    //todo-item组件现在接受一个
+    //"prop",类似于一个自定义 attribute.
+    //这个prop 名为todo。
+    props:['todo'],
+    template:'<li>{{ todo.text }}</li>'
+})
+var app7=new Vue({
+    el:'#app-7',
+    data:{
+        groceryList:[
+            {id: 0,text: '蔬菜'},
+            {id: 1,text: '奶酪'},
+            {id: 2,text: '苹果'}
+        ]
+    }
+})
