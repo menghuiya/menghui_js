@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="app">
+        <div id="example0">
+            <button v-on:click="counter +=1">数值：{{counter}}</button>
+            <hr>
+            <button v-on:dblclick="greet('abc',$event)">greet</button> <hr>
+            <button v-on:click.once="say('hi')">Say hi</button>
+            <button v-on:click="say('what')">Say what</button> <hr>
+            <button v-on:click="warn('Form cannot be submitted yet.', $event)">
+                Submit
+            </button> <hr>
+            <input v-on:keyup.enter="submit">
+        </div>
+    </div>
+</body>
+<script>
+    var vm=new Vue({
+        el:"#app",
+        data:{
+            counter:0,
+            name:'vue',
+        },
+        methods:{
+            greet:function(str,e){
+                alert(str);
+                console.log(e);
+            },
+            say: function (message) {
+                alert(message);
+            },
+            warn: function (message, event) {
+                // 现在我们可以访问原生事件对象
+                if (event) {
+                    event.preventDefault()
+                }
+                alert(message)
+            },
+            submit:function(){
+                alert(1)
+            }
+        }
+    })
+</script>
+</html>

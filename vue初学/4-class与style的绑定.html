@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<style>
+    .active{color: red;font-size: 20px;text-align: center;}
+    .bgcolor{background-color: royalblue;}
+</style>
+<body>
+    <div id="app">
+        <div
+            v-bind:class="{active:isActive,bgcolor:isBg}"    
+        >梦回资源网啊0</div>
+    </div> <hr>
+    <div id="app1">
+        <div
+            v-bind:class="classObject"    
+        >梦回资源网啊1</div>
+    </div> <hr>
+    <div id="app2">
+        <div
+            v-bind:class="classObject"    
+        >梦回资源网啊2</div>
+    </div> <hr> 
+
+    <div id="app3">
+        <div
+            v-bind:class="[{ active: isActive },bgClass]"    
+        >梦回资源网啊3</div>
+    </div> <hr>
+    <h2>用在组件上</h2>
+    <div id="app4">
+        <my-component class="baz boo"></my-component>
+        <button-counter @clickNow="clickNow"></button-counter>
+    </div>
+
+    <hr> <hr>
+    <div id="app5">
+        <blog-post
+            v-for="post in posts"
+            v-bind:key="post.id"
+            v-bind:post="post"
+        ></blog-post>
+    </div>
+</body>
+<script src="js/4.js"></script>
+</html>

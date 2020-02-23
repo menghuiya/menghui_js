@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="example-1">
+            <input v-model="message" placeholder="编辑">
+            <p>message is :{{message}}</p>  <hr>
+            <textarea v-model="message2" placeholder=" add multiple lines"></textarea>
+            <p style="white-space: pre-line;">{{message2}}</p>  <hr>
+            <div style="margin: 20px 0;" >
+                <input type="checkbox" id="jack" value="jack" v-model="checkedNames">
+                <label for="jack">jack</label>
+                <input type="checkbox" id="john" value="john" v-model="checkedNames">
+                <label for="john">john</label> 
+                <input type="checkbox" id="mike" value="mike" v-model="checkedNames">
+                <label for="mike">mike</label>   <br>
+                <span>checked names:{{ checkedNames}}</span>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <input type="radio" id="one" value="one" v-model="picked">
+                <label for="one">one</label>
+                            <br>
+                <input type="radio" id="two" value="tow" v-model="picked">
+                <label for="tow">tow</label> 
+                <br>
+                <span>picked:{{ picked }}</span>
+            </div>
+            <hr>
+
+
+            <div style="margin-top: 20px;">
+                <select v-model="selected">
+                    <option disabled value="">请选择</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                <span>Selected: {{ selected }}</span>
+            </div>
+            <hr>
+            <div style="margin-top: 20px;">
+                <select v-model="selecteds" multiple style="width: 50px;">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                </select>
+                  <br>
+                <span>Selecteds: {{ selecteds }}</span>
+            </div>
+
+            <hr>
+            <button type="button" @click="submit">提交</button>
+        </div>
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            message:"test",
+            message2:"hi",
+            checkedNames:['jack','john'],
+            picked:"three",
+            selected:"",
+            selecteds:[]
+        },
+        methods:{
+            submit:function(){
+                alert(this.message);
+                var postObj={
+                    msg1:this.message,
+                    msg2:this.message2,
+                    msg3:this.checkedNames,
+                    msg4:this.picked
+                }
+                console.log(postObj)
+            }
+        }
+    })
+</script>
+</html>
