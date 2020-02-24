@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+    <script src="vue.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-html="message" v-cloak :title="disTitle">
+        <!-- {{}}插值表达式 适用于将数据显示在页面上 -->
+        {{message}}
+    </div>
+</body>
+<script>
+    var app=new Vue({
+        el:"#app",
+        data:{
+            message:"<h1>hello world</h1>",
+            disTitle:"隐藏信息......"
+        }
+    })
+        
+</script>
+</html>
