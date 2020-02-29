@@ -1,5 +1,12 @@
 const fs = require('fs');
-const buf = require('buffer')
-let data = fs.readFileSync('hello-world.js');
-let str = buf.toString(data)
-console.log(str)
+let data = fs.readFileSync('fs.txt');
+let str = data.toString()
+let arr = str.split("\n")
+console.log(arr.length-1);
+
+/* 官方教程
+const fs = require('fs')
+const contents = fs.readFileSync(process.argv[2])
+const lines = contents.toString().split('\n').length - 1
+console.log(lines)
+*/
