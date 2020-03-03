@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="vue.js"></script>
+  </head>
+  <style>
+    .red {
+      color: red;
+    }
+    .thin {
+      font-weight: 200;
+    }
+    .italic {
+      font-style: italic;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <hr>
+      <h1 :class="classArr">绑定class的标题1</h1>
+      <hr>
+      <hr>
+      <h1 :class="classObj">绑定class的标题2</h1>
+      <hr>
+      <hr>
+      <input type="button" @click="flag=!flag" value="toggle" >
+      <h1 v-show='flag'>这是条件渲染show</h1>
+      <h1 v-if='flag'>这是条件渲染if</h1>
+      <hr>
+      <hr>
+      <h1 v-if='OK'>这是条件渲染if</h1>
+      <h1 v-else>这是条件渲染else</h1>
+      <hr>
+      <hr>
+      <ul>
+        <li v-for='(n,index) in numArr'>{{index}}----{{n}}</li>
+      </ul>
+
+      <hr>
+      <ol>
+        <li 
+          v-for="(todo, index) in numArrObj"
+        >{{todo.id}}-----{{todo.name}}---{{index}}
+        </li>
+      </ol>
+      <hr>
+      <ul>
+        <li 
+          v-for="(value,key,index) in user"
+        >id：{{key}}-----值：{{value}}---索引：{{index}}
+        </li>
+      </ul>
+      <hr>
+      <ul>
+        <li v-for='count in 10'>{{count}}</li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        classArr: ["red", "italic",'thin'],
+        classObj:{
+          thin:true,
+          italic:true,
+          red:false
+        },
+        OK:true,
+        flag:false,
+        numArr:[1,2,3,4,5,6],
+        numArrObj:[
+          {id:1,name:'menghui1'},
+          {id:2,name:'menghui2'},
+          {id:3,name:'menghui3'},
+          {id:4,name:'menghui4'}
+        ],
+        user:{
+          id:1,
+          name:'梦回',
+          sex:'男'
+        }
+      }
+    });
+  </script>
+</html>
