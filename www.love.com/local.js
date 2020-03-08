@@ -1,13 +1,21 @@
-// function ajax_test() {
-//   $.ajax({
-//     url: 'data.json', //json文件位置
-//     type: 'GET', //请求方式为get
-//     dataType: 'json', //返回数据格式为json
-//     success: function(data) {
-//       //请求成功完成后要执行的方法
-//       alert(data.data[0].content);
-//     }
-//   });
+//  function ajax_test(types) {
+//    $.ajax({
+//      url: 'data.json', //json文件位置
+//      type: 'GET', //请求方式为get
+//      dataType: 'json', //返回数据格式为json
+//      success: function(data) {
+//        //请求成功完成后要执行的方法
+//        let datas = JSON.stringify(data.data[0]);
+//         if (types == 'storage') {
+//           localStorage.setItem('content-' + data.data[0].id, datas);
+//           alert(' localStorage添加成功 ');
+//         }
+//         if (types == 'session') {
+//           sessionStorage.setItem('content-' + data.data[0].id, datas);
+//           alert(' sessionStorage添加成功 ');
+//         }
+//      }
+//  }
 // }
 // ajax_test(); //执行函数
 /**上部分为jQuery的ajax实现代码
