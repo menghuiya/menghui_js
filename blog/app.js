@@ -66,4 +66,6 @@ mongoose.connect('mongodb://localhost:27017/blog', function(err) {
  * /public->静态文件->直接读取指定目录下的文件,返回给用户
  *
  * ->动态->处理业务逻辑,加载模板,解析目标->返回给用户
+ * 开启:mongod --dbpath=C:\Users\menghui\Documents\website\blog\db
+ * 关闭:
  */
