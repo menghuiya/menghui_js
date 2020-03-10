@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">汽车品牌管理</h3>
+        </div>
+        <div class="panel-body">
+          <label for="">
+            id:
+            <input type="text" v-model="ppid" class="form-control" />
+          </label>
+
+          <label for="">
+            name:
+            <input
+              type="text"
+              v-model="ppname"
+              class="form-control"
+              @keyup.enter="add"
+            />
+          </label>
+          <input
+            type="button"
+            value="添加"
+            @click="add"
+            class="btn btn-primary"
+          />
+          <label for="">
+            <input
+              type="text"
+              placeholder="输入关键词搜索"
+              v-model="seakey"
+              class="form-control"
+            />
+          </label>
+        </div>
+      </div>
+
+      <table class="table table-hover table-bordered table-striped">
+        <thead>
+          <tr>
+            <th colspan="4">品牌管理</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>ctime</th>
+            <th>opration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(item,index) in list"
+            :key="index"
+            v-show="item.name.indexOf(seakey)>-1"
+          >
+            <td>{{item.id}}</td>
+            <td>{{item.name | uppercase}}</td>
+            <td>{{item.ctime |formatdate}}</td>
+            <td><a href="#" @click.prevent="remove(index)">删除</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        list: [
+          { id: 1, name: 'benchi', ctime: new Date() },
+          { id: 2, name: 'baoma', ctime: new Date() },
+          { id: 3, name: 'dazhong', ctime: new Date() },
+          { id: 4, name: 'benchi1', ctime: new Date() },
+          { id: 5, name: 'benchi2', ctime: new Date() }
+        ],
+        ppid: '',
+        ppname: '',
+        seakey: ''
+      },
+      methods: {
+        add: function() {
+          if (this.ppid.length > 0 && this.ppname.length > 0) {
+            let index = this.list.findIndex((item) => item.id == this.ppid);
+            if (index == -1) {
+              this.list.push({
+                id: this.ppid,
+                name: this.ppname,
+                ctime: new Date()
+              });
+            } else {
+              alert('该id已存在,当前id需要大于' + this.list.length);
+            }
+          } else {
+            alert('添加失败，请输入内容');
+          }
+        },
+        remove: function(index) {
+          this.list.splice(index, 1);
+        }
+      },
+      filters: {
+        uppercase: function(val) {
+          if (!val) {
+            return '';
+          }
+
+          val = val.toString();
+          let returnMsg = val.charAt(0).toUpperCase() + val.slice(1);
+          return returnMsg;
+        },
+        formatdate: function(val) {
+          if (!val) {
+            return '';
+          }
+          let year = val.getFullYear(); //取得4位数的年份
+          let month = val.getMonth() + 1; //取得日期中的月份，其中0表示1月，11表示12月
+          let date = val.getDate();
+          return year + '-' + month + '-' + date;
+        }
+      }
+    });
+  </script>
+</html>

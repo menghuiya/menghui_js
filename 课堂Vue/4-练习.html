@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7.css" />
+  </head>
+  <body>
+    <div id="app">
+      我是四舍五入前的数字:<input
+        type="text"
+        v-model="befnum"
+        class="form-control"
+      />
+      <hr />
+      我是四舍五入后的数字:
+      <h2>{{befnum |sishe }}</h2>
+      <hr />
+    </div>
+
+    <hr />
+    <div id="app1">
+      <h2 :style="`color:${clcolor};`| changeColor">{{msg}}</h2>
+      <select v-model="clcolor">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+      </select>
+    </div>
+
+    <hr />
+    <div id="app2">
+      <input type="text" placeholder="name" v-model="name" @keyup.enter="add" />
+      <button @click="add">add</button>
+    </div>
+  </body>
+  <script>
+    let app = new Vue({
+      el: '#app',
+      data: {
+        befnum: ''
+      },
+      filters: {
+        sishe: function(val) {
+          if (!val) {
+            return '';
+          }
+          val = Number(val);
+          return val.toFixed(0);
+        }
+      }
+    });
+    let app1 = new Vue({
+      el: '#app1',
+      data: {
+        clcolor: 'red',
+        msg: '我是一个一直斜体的div'
+      },
+      filters: {
+        changeColor: function(val) {
+          return val + 'font-style:italic';
+        }
+      }
+    });
+
+    let app2 = new Vue({
+      el: '#app2',
+      data: {
+        name: ''
+      },
+      methods: {
+        add() {
+          alert(this.name);
+        }
+      }
+    });
+  </script>
+</html>
