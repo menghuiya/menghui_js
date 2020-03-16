@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="./vue.js"></script>
+  <body>
+    <div id="app">
+      <div v-fonsize:30px>设置的元素的字号 30px</div>
+      请输入出生年月日: <input type="text" v-model="day" />
+      <p v-birth="day"></p>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      data() {
+        return {
+          day: ''
+        };
+      },
+      directives: {
+        fonsize: {
+          inserted: function(el, binding) {
+            el.style = `font-size:${binding.arg}`;
+          }
+        },
+        birth: {
+          update(el, binding) {
+            let bir = binding.value;
+            bir = new Date(bir).getTime();
+            let nowdate = new Date().getTime();
+            let cha = nowdate - bir;
+            let days = parseInt(cha / 86400000);
+            if (!Number.isNaN(days)) {
+              //判断是否是NaN
+              el.innerText = `今天是你来到这个世界的第${days}天`;
+            }
+          }
+        }
+      }
+    }).$mount('#app');
+  </script>
+</html>

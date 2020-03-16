@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" name="" placeholder="1" />
+      <input type="text" name="" placeholder="2" v-focus />
+      <hr />
+      <input type="text" placeholder="color" v-color:red />
+      <input type="text" placeholder="color" v-color:green />
+      <input type="text" placeholder="color" v-color:blue />
+      <!-- <input type="text" name="" placeholder="2" v-focus />
+      <input type="text" placeholder="color" v-colors="red" />
+      <input type="text" placeholder="color" v-colors="green" />
+      <input type="text" placeholder="color" v-colors="blue" /> -->
+
+      <hr />
+      <input type="text" placeholder="color" v-colors:red />
+      <select v-model="clcolor">
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+      </select>
+    </div>
+    <hr />
+    <div id="app1"></div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          clcolor: ''
+        };
+      },
+      directives: {
+        focus: {
+          inserted: function(el) {
+            //聚焦元素
+            el.focus();
+          }
+        },
+        color: {
+          inserted: function(el, binding) {
+            el.style = `color:${binding.arg}`;
+          }
+        },
+        colors: {
+          inserted: function(el, binding) {
+            el.style = `color:${this.clcolor}`;
+          }
+        }
+      }
+    });
+  </script>
+</html>

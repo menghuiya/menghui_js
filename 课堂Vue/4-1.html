@@ -16,7 +16,7 @@
         <div class="panel-body">
           <label for="">
             id:
-            <input type="text" v-model="ppid" class="form-control" />
+            <input type="text" v-model="ppid" class="form-control" v-focus />
           </label>
 
           <label for="">
@@ -113,8 +113,6 @@
           if (!val) {
             return '';
           }
-
-          val = val.toString();
           let returnMsg = val.charAt(0).toUpperCase() + val.slice(1);
           return returnMsg;
         },
@@ -126,6 +124,14 @@
           let month = val.getMonth() + 1; //取得日期中的月份，其中0表示1月，11表示12月
           let date = val.getDate();
           return year + '-' + month + '-' + date;
+        }
+      },
+      directives: {
+        focus: {
+          inserted: function(el) {
+            //聚焦元素
+            el.focus();
+          }
         }
       }
     });
