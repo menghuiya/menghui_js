@@ -1,0 +1,85 @@
+#stage {
+  width: 300px;
+  margin: 100px auto;
+  perspective: 100px; /**距离100px*/
+}
+.box {
+  width: 100px;
+  height: 100px;
+  float: left;
+  transition: linear 1s;
+  /*3D变换*/
+  transform-style: preserve-3d;
+}
+img {
+  width: 100px;
+  height: 75px;
+}
+.x:hover {
+  transform: rotateX(60deg);
+}
+.y:hover {
+  transform: rotateY(60deg);
+}
+.z:hover {
+  transform: rotateZ(60deg);
+}
+#container,
+#container div {
+  width: 100px;
+  height: 75px;
+  background-color: #cccccc;
+  border: 1px solid black;
+}
+#rotateDiv {
+  transform: rotate(30deg);
+}
+.mhborder {
+  height: 100px;
+  width: 150px;
+  border: 1px solid blue;
+  border-top-left-radius: 40px 20px;
+  border-bottom-right-radius: 20px;
+}
+.mhshadow {
+  width: 300px;
+  height: 100px;
+  background-color: #ff9900;
+  box-shadow: 10px 10px 5px #888888;
+}
+.mhtars {
+  height: 40px;
+  width: 200px;
+  line-height: 40px;
+  border-radius: 5px;
+  color: #000000;
+  background-color: silver;
+  transition: all 1s linear; /*过渡 1秒*/
+  font-size: 20px;
+  text-align: center;
+}
+.mhtars:hover {
+  color: white;
+  background-color: #45b823;
+}
+/*定义动画规则**/
+@keyframes mycolor {
+  0% {
+    background-color: red;
+  }
+  30% {
+    background-color: blue;
+  }
+  60% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: green;
+  }
+}
+.mhcolor {
+  height: 100px;
+  width: 100px;
+  background-color: greenyellow;
+  animation: mycolor 5s linear; /*引入动画*/
+}
