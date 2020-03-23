@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <script src="./axios.js"></script>
+    <link rel="stylesheet" href="bootstrap-3.3.7.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">汽车品牌管理</h3>
+        </div>
+        <div class="panel-body">
+          <label for="">
+            name:
+            <input
+              type="text"
+              v-model="ppname"
+              class="form-control"
+              @keyup.enter="add"
+            />
+          </label>
+          <input
+            type="button"
+            value="添加"
+            @click="add"
+            class="btn btn-primary"
+          />
+          <label for="">
+            <input
+              type="text"
+              placeholder="输入关键词搜索"
+              v-model="seakey"
+              class="form-control"
+            />
+          </label>
+          <input
+            type="button"
+            value="搜索"
+            class="btn btn-primary"
+            @click="search"
+          />
+        </div>
+      </div>
+
+      <table class="table table-hover table-bordered table-striped">
+        <thead>
+          <tr>
+            <th colspan="4">品牌管理</th>
+          </tr>
+          <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>ctime</th>
+            <th>opration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in list" v-if="isShow(item)">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.ctime}}</td>
+            <td>
+              <a href="#" @click.prevent="remove(item.id)">删除</a>
+              <a href="#" @click.prevent="edit(item)">编辑</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- <div class="menghui">
+
+      </div> -->
+    </div>
+  </body>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        list: [],
+        ppid: '',
+        ppname: '',
+        seakey: ''
+      },
+      methods: {
+        query: function() {
+          axios
+            .get('http://47.101.161.91/brands')
+            .then((res) => {
+              console.log(res.data);
+              this.list = res.data;
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        },
+        add: function() {
+          let newStu = { name: this.ppname, ctime: new Date() };
+          axios
+            .post('http://47.101.161.91/brands', newStu)
+            .then((res) => {
+              console.log(res.data);
+              this.query();
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        },
+        remove(id) {
+          axios
+            .delete('http://47.101.161.91/brands', {
+              data: {
+                id: id
+              }
+            })
+            .then((res) => {
+              console.log(res);
+              this.query();
+            })
+            .catch((err) => {
+              alert('删除错误');
+              console.error(err);
+            });
+        },
+        search() {
+          axios
+            .get('http://47.101.161.91/brands', {
+              name: this.name
+            })
+            .then((res) => {
+              console.log(res.data);
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        },
+        edit(body) {
+          let result = { id: body.id, name: this.ppname, ctime: new Date() };
+          axios.put('http://47.101.161.91/brands', result).then((res) => {
+            this.query();
+          });
+        },
+        isShow(brand) {
+          console.log(brand.name);
+          if (brand.name) {
+            let result = brand.name.includes(this.seakey);
+            console.log(result);
+            return this.seakey === '' ? true : result;
+          }
+          return false;
+        }
+      },
+      created() {
+        this.query();
+      }
+    });
+  </script>
+</html>

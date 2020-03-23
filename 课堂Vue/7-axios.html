@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="./vue.js"></script>
+  <script src="./axios.js"></script>
+  <body>
+    <div id="app">
+      <h1>学生信息</h1>
+      <div>
+        姓名:<input type="text" name="name" v-model="name" /> 性别:<select
+          name="sex"
+          v-model="sex"
+        >
+          <option value="male">男</option>
+          <option value="male">女</option>
+        </select>
+        年龄:<input type="text" v-model="age" />
+        <button @click="add">添加</button>
+      </div>
+      <ul>
+        <li v-for="student in students">
+          name:{{student.name}} -id:{{student.id}} -sex:{{student.sex}}
+          -age:{{student.age}}
+          <button @click="del(student.id)">删除</button>
+          <button @click="edit(student.id)">编辑</button>
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    let app = new Vue({
+      data() {
+        return {
+          students: null,
+          name: '',
+          age: 0,
+          sex: ''
+        };
+      },
+
+      methods: {
+        query: function() {
+          axios
+            .get('http://47.101.161.91/students')
+            .then((res) => {
+              console.log(res.data);
+              this.students = res.data;
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        },
+        add: function() {
+          let newStu = { name: this.name, age: this.age, sex: this.sex };
+          axios
+            .post('http://47.101.161.91/students', newStu)
+            .then((res) => {
+              console.log(res.data);
+              this.query();
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        },
+        del(id) {
+          axios
+            .delete('http://47.101.161.91/students', {
+              data: {
+                id: id
+              }
+            })
+            .then((res) => {
+              console.log(res);
+              this.query();
+            })
+            .catch((err) => {
+              alert('删除错误');
+              console.error(err);
+            });
+        },
+        edit(id) {
+          axios
+            .put('http://47.101.161.91/students', {
+              data: {
+                id: id
+              }
+            })
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        }
+      },
+      created() {
+        this.query();
+      }
+    }).$mount('#app');
+  </script>
+</html>
