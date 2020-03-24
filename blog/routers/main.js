@@ -4,31 +4,37 @@ let express = require('express');
 let router = express.Router();
 let Category = require('../models/Category');
 let Content = require('../models/Content');
+let data;
+/**
+ * 处理通用的数据
+ */
+router.use(function(req, res, next) {
+  data = {
+    userInfo: req.userInfo,
+    categories: []
+  };
+  Category.find().then(function(categories) {
+    data.categories = categories;
+    next();
+  });
+});
 
 /**
  * 首页
  */
 router.get('/', function(req, res, next) {
-  let data = {
-    userInfo: req.userInfo,
-    category: req.query.category || '',
-    categories: [],
-    page: Number(req.query.page || 1), //注意验证 是否为数字
-    limit: 3, //限制条数
-    pages: 0,
-    count: 0
-  };
+  data.category = req.query.category || '';
+  data.page = 0;
+  (data.pages = Number(req.query.page || 1)), //注意验证 是否为数字
+    (data.limit = 3), //限制条数
+    (data.count = 0);
   let where = {};
   if (data.category) {
     where.category = data.category;
   }
   //读取所有的分类信息
-  Category.find()
-    .sort({ _id: 1 })
-    .then(function(categories) {
-      data.categories = categories;
-      return Content.where(where).count();
-    })
+  Content.where(where)
+    .count()
     .then(function(count) {
       data.count = count;
       data.pages = Math.ceil(data.count / data.limit);
@@ -54,5 +60,21 @@ router.get('/', function(req, res, next) {
       res.render('main/index', data);
     });
 });
+
+// 文章内容页面
+router.get('/view', function(req, res, next) {
+  let contentId = req.query.contentid || '';
+  Content.findOne({
+    _id: contentId
+  }).then(function(content) {
+    data.content = content;
+
+    content.views++;
+    content.save();
+    res.render('main/view', data);
+  });
+});
+
+/**评论内容 */
 
 module.exports = router;

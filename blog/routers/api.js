@@ -3,6 +3,7 @@
 let express = require('express');
 let router = express.Router();
 let User = require('../models/User');
+let Content = require('../models/Content');
 
 // router.get('/user', function(req, res, next) {
 //   res.send('apipage');
@@ -124,4 +125,31 @@ router.get('/user/logout', function(req, res) {
   req.cookies.set('userInfo', null);
   res.json(responseData);
 });
+
+/**评论提交 */
+router.post('/comment/post', function(req, res) {
+  //内容的id
+  let contentId = req.body.contentid || '';
+  console.log(req.userInof);
+  let postData = {
+    username: 'admin',
+    postTime: new Date(),
+    content: req.body.content
+  };
+
+  //查询当前内容的信息
+  Content.findOne({
+    _id: contentId
+  })
+    .then(function(content) {
+      content.comments.push(postData);
+      return content.save();
+    })
+    .then(function(newContent) {
+      responseData.message = '评论成功';
+      responseData.data = newContent;
+      res.json(responseData);
+    });
+});
+
 module.exports = router;
