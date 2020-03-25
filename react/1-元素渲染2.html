@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <style>
+    .colors {
+      color: red;
+    }
+  </style>
+  <body>
+    <div id="example"></div>
+    <div id="example1"></div>
+    <script type="text/babel">
+      let myStyle = { color: 'red', textAlign: 'center' };
+
+      class Name extends React.Component {
+        render() {
+          return <h1 style={myStyle}>网站名称：{this.props.name}</h1>;
+        }
+      }
+      class Url extends React.Component {
+        render() {
+          return <h1>网站地址：{this.props.url}</h1>;
+        }
+      }
+      class Nickname extends React.Component {
+        render() {
+          return <h1>网站地址：{this.props.nickname}</h1>;
+        }
+      }
+      class Clock extends React.Component {
+        render() {
+          return <h1>当前时间：{this.props.date.toLocaleTimeString()}</h1>;
+        }
+      }
+      function App(props) {
+        return (
+          <div>
+            <Name name={props.name} />
+            <Url url={props.url} />
+            <Nickname nickname={props.nickname} />
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <App name={'梦回呀'} url={'https://www.52mhzy.cn'} nickname={'mhzy'} />,
+        document.getElementById('example')
+      );
+      function tick() {
+        ReactDOM.render(
+          <Clock date={new Date()} />,
+          document.getElementById('example1')
+        );
+      }
+      setInterval(tick, 1000);
+    </script>
+  </body>
+</html>
