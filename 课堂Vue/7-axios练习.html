@@ -8,6 +8,54 @@
     <script src="./axios.js"></script>
     <link rel="stylesheet" href="bootstrap-3.3.7.css" />
   </head>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .edit-box-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(198, 191, 206, 0.397);
+    }
+    .edit-box {
+      width: 400px;
+      height: 150px;
+      background-color: #ffffff;
+      position: relative;
+      left: 35%;
+      top: 30%;
+      text-align: center;
+    }
+    .edit-box input {
+      width: 300px;
+      height: 40px;
+      margin-bottom: 20px;
+      border: 1px solid rgb(114, 109, 109);
+      border-radius: 5px;
+    }
+    .edit-box button {
+      float: right;
+      width: 100px;
+      height: 40px;
+      line-height: 40px;
+      margin-right: 30px;
+      border: none;
+      border-radius: 3px;
+      background-color: seagreen;
+      cursor: pointer;
+      color: white;
+    }
+    .edit-box h3 {
+      padding: 5px;
+    }
+  </style>
   <body>
     <div id="app">
       <div class="panel panel-primary">
@@ -71,9 +119,13 @@
           </tr>
         </tbody>
       </table>
-      <!-- <div class="menghui">
-
-      </div> -->
+      <div class="edit-box-page" v-show="editbox">
+        <div class="edit-box" id="editDialog">
+          <h3>名称修改id---{{editItem.id}}</h3>
+          名称:<input type="text" name="name" v-model="editItem.name" /> <br />
+          <button @click="editTrue()">修改</button>
+        </div>
+      </div>
     </div>
   </body>
   <script>
@@ -83,14 +135,18 @@
         list: [],
         ppid: '',
         ppname: '',
-        seakey: ''
+        seakey: '',
+        editbox: false,
+        editItem: {
+          id: '',
+          name: ''
+        }
       },
       methods: {
         query: function() {
           axios
             .get('http://47.101.161.91/brands')
             .then((res) => {
-              console.log(res.data);
               this.list = res.data;
             })
             .catch((err) => {
@@ -102,7 +158,6 @@
           axios
             .post('http://47.101.161.91/brands', newStu)
             .then((res) => {
-              console.log(res.data);
               this.query();
             })
             .catch((err) => {
@@ -117,7 +172,7 @@
               }
             })
             .then((res) => {
-              console.log(res);
+              // console.log(res);
               this.query();
             })
             .catch((err) => {
@@ -131,23 +186,46 @@
               name: this.name
             })
             .then((res) => {
-              console.log(res.data);
+              // console.log(res.data);
             })
             .catch((err) => {
               console.error(err);
             });
         },
+        // edit(body) {
+        //   let result = { id: body.id, name: this.ppname, ctime: new Date() };
+        //   axios.put('http://47.101.161.91/brands', result).then((res) => {
+        //     this.query();
+        //   });
+        // },
         edit(body) {
-          let result = { id: body.id, name: this.ppname, ctime: new Date() };
-          axios.put('http://47.101.161.91/brands', result).then((res) => {
-            this.query();
-          });
+          this.editbox = true;
+          this.editItem.id = body.id;
+          this.editItem.name = body.name;
+        },
+        editTrue() {
+          let result = {
+            id: this.editItem.id,
+            name: this.editItem.name,
+            ctime: new Date()
+          };
+
+          axios
+            .put('http://47.101.161.91/brands', result)
+            .then((res) => {
+              this.editbox = false;
+              this.query();
+            })
+            .catch((err) => {
+              alert('删除错误');
+              this.query();
+              console.error(err);
+            });
         },
         isShow(brand) {
           console.log(brand.name);
           if (brand.name) {
             let result = brand.name.includes(this.seakey);
-            console.log(result);
             return this.seakey === '' ? true : result;
           }
           return false;

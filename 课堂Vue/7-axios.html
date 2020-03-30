@@ -7,6 +7,52 @@
   </head>
   <script src="./vue.js"></script>
   <script src="./axios.js"></script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .edit-box-page {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(198, 191, 206, 0.397);
+    }
+    .edit-box {
+      width: 400px;
+      height: 210px;
+      background-color: #ffffff;
+      position: relative;
+      left: 35%;
+      top: 30%;
+      text-align: center;
+    }
+    .edit-box input,
+    .edit-box select {
+      width: 300px;
+      height: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgb(114, 109, 109);
+      border-radius: 5px;
+    }
+    .edit-box button {
+      float: right;
+      width: 70px;
+      height: 30px;
+      line-height: 30px;
+      margin-right: 5px;
+      border: none;
+      border-radius: 3px;
+      background-color: seagreen;
+      cursor: pointer;
+      color: white;
+    }
+  </style>
   <body>
     <div id="app">
       <h1>学生信息</h1>
@@ -26,9 +72,23 @@
           name:{{student.name}} -id:{{student.id}} -sex:{{student.sex}}
           -age:{{student.age}}
           <button @click="del(student.id)">删除</button>
-          <button @click="edit(student.id)">编辑</button>
+          <button @click="edit(student)">编辑</button>
         </li>
       </ul>
+
+      <div class="edit-box-page" v-show="editbox">
+        <div class="edit-box" id="editDialog">
+          <h3>用户修改</h3>
+          姓名:<input type="text" name="name" v-model="editItem.name" /> <br />
+          性别:<select name="sex" v-model="editItem.sex">
+            <option value="male">男</option>
+            <option value="male">女</option>
+          </select>
+          <br />
+          年龄:<input type="text" v-model="editItem.age" /> <br />
+          <button @click="editTrue()">修改</button>
+        </div>
+      </div>
     </div>
   </body>
   <script>
@@ -38,7 +98,14 @@
           students: null,
           name: '',
           age: 0,
-          sex: ''
+          sex: '',
+          editbox: false,
+          editItem: {
+            id: '',
+            name: '',
+            age: 0,
+            sex: ''
+          }
         };
       },
 
@@ -82,17 +149,31 @@
               console.error(err);
             });
         },
-        edit(id) {
+        edit(body) {
+          this.editbox = true;
+          this.editItem.id = body.id;
+          this.editItem.name = body.name;
+          this.editItem.sex = body.sex;
+          this.editItem.age = body.age;
+        },
+        editTrue() {
+          let result = {
+            id: this.editItem.id,
+            name: this.editItem.name,
+            age: this.editItem.age,
+            sex: this.editItem.sex
+          };
+
           axios
-            .put('http://47.101.161.91/students', {
-              data: {
-                id: id
-              }
-            })
+            .put('http://47.101.161.91/students', result)
             .then((res) => {
-              console.log(res);
+              console.log(result);
+              this.editbox = false;
+              this.query();
             })
             .catch((err) => {
+              alert('删除错误');
+              this.query();
               console.error(err);
             });
         }
