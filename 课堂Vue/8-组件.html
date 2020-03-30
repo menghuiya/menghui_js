@@ -7,13 +7,73 @@
   </head>
   <script src="./vue.js"></script>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h2>第一个实例</h2>
+      <my-div></my-div>
+      <meng-hui></meng-hui>
+      <h3>对比私有公有</h3>
+      <my-div></my-div>
+    </div>
+    <hr />
+    <div id="app1">
+      <h2>第二个实例</h2>
+      <my-div></my-div>
+      <h3>tps:俩个私有报错</h3>
+    </div>
+    <template id="demo">
+      <div>
+        <p>我是私有的1</p>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+      </div>
+    </template>
   </body>
+  <script type="text/template" id="template">
+    <div>
+      <p>我是私有的2</p>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+    </div>
+  </script>
   <script>
-    new Vue({
+    Vue.component('myDiv', {
+      data: function() {
+        return {
+          meg: 1
+        };
+      },
+      template: `<div>
+        <p>我是公有的</p>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+        </div>`
+    });
+    let app = new Vue({
+      data() {
+        return {};
+      },
+      components: {
+        mengHui: {
+          template: '#template'
+        },
+        myDiv: {
+          template: '#demo'
+        }
+      }
+    }).$mount('#app');
+    let app1 = new Vue({
       data() {
         return {};
       }
-    }).$mount('#app');
+    }).$mount('#app1');
   </script>
 </html>

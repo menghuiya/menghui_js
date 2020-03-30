@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="./vue.js"></script>
+  <style>
+    .card-box {
+      width: 200px;
+      height: 300px;
+      border: 2px solid black;
+      display: flex;
+      flex-flow: column;
+      margin: 10px;
+    }
+    .card-header {
+      height: 40px;
+      background-color: black;
+      color: #ffffff;
+    }
+    .card-content {
+      flex: 1;
+    }
+    .card-footer {
+      height: 30px;
+      background-color: black;
+      color: #ffffff;
+    }
+  </style>
+  <body>
+    <div id="app">
+      <h2>确定下发到服务器A <get-sure></get-sure></h2>
+      <h2>确定下发到服务器B <get-sure></get-sure></h2>
+      <h2>确定下发到服务器c <get-sure></get-sure></h2>
+
+      <hr />
+      <div style="display: flex;">
+        <all-card></all-card>
+        <all-card></all-card>
+        <all-card></all-card>
+      </div>
+    </div>
+
+    <hr />
+  </body>
+  <script>
+    Vue.component('getSure', {
+      data: function() {
+        return {
+          message: 1
+        };
+      },
+      template: ` <button>ok</button>`
+    });
+
+    Vue.component('allCard', {
+      data: function() {
+        return {};
+      },
+      template: `<div class="card-box">
+      <div class="card-header">
+        header-zone
+      </div>
+      <div class="card-content">
+        content-zone
+      </div>
+      <div class="card-footer">
+        footer-zone
+      </div>
+    </div>`
+    });
+
+    new Vue({
+      data() {
+        return {};
+      }
+    }).$mount('#app');
+  </script>
+</html>
