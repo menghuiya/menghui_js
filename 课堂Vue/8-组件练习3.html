@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="./vue.js"></script>
+  <body>
+    <div id="app">
+      <cpn @itemclick="cpnClick"></cpn>
+
+      <hr />
+      <h2>{{message}}</h2>
+      <ul>
+        <li v-for="i in category">{{i}}</li>
+      </ul>
+    </div>
+    <template id="cnp">
+      <div>
+        <h2>(｡･∀･)ﾉﾞ嗨</h2>
+        <ul>
+          <li v-for="i in cmoves">{{i}}</li>
+        </ul>
+        <button @click.once="change(categories)">点击传递</button>
+      </div>
+    </template>
+  </body>
+  <script>
+    //子组件
+    const cpn = {
+      template: '#cnp',
+      props: ['cmoves'],
+      data() {
+        return {
+          categories: [
+            { id: 'aaa', name: '热门推荐' },
+            { id: 'bbb', name: '手机数码' },
+            { id: 'ccc', name: '办公用品' },
+            { id: 'ddd', name: '家用家电' },
+          ],
+        };
+      },
+      methods: {
+        change(item) {
+          //发射事件 自定义事件
+          this.$emit('itemclick', item);
+        },
+      },
+    };
+    new Vue({
+      data() {
+        return {
+          category: [
+            { id: 1, name: '初始值1' },
+            { id: 2, name: '初始值2' },
+          ],
+          message: '这是初始数据',
+        };
+      },
+      components: {
+        cpn,
+      },
+      methods: {
+        cpnClick(item) {
+          this.category = item;
+          this.message = '这是返回的子组件的数据';
+          alert('1');
+        },
+      },
+    }).$mount('#app');
+  </script>
+</html>

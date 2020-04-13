@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .mhh {
+        float: left;
+      }
+      .card-box {
+        width: 200px;
+        height: 300px;
+        border: 2px solid black;
+        display: flex;
+        flex-flow: column;
+        margin: 10px;
+      }
+      .card-header {
+        height: 40px;
+        background-color: black;
+        color: #ffffff;
+      }
+      .card-content {
+        flex: 1;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+      .card-content > span {
+        color: darkcyan;
+        display: inline-block;
+        width: 100%;
+        background-color: #d8d2d2;
+      }
+      .card-footer {
+        height: 30px;
+        background-color: black;
+        color: #ffffff;
+      }
+      .card-box input {
+        height: 30px;
+      }
+    </style>
+  </head>
+  <script src="./vue.js"></script>
+  <body>
+    <div id="app">
+      <h3>
+        来自<span style="color: red;">{{itemss}}</span>最新评论:
+        <span style="color: royalblue;">{{message}}</span>
+      </h3>
+      <hr />
+      <div v-for="item in books" class="mhh">
+        <card :cbooks="item" @itemclick="getcoment"></card>
+      </div>
+    </div>
+    <template id="card">
+      <div class="card-box">
+        <div class="card-header">
+          {{cbooks.name}}
+        </div>
+        <div class="card-content">
+          <span>评论:</span>
+          <div v-if="cbooks.date.length==0">暂无评论</div>
+          <div v-else>
+            <ul>
+              <li v-for="item in cbooks.date">
+                {{item}}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-footer">{{cbooks.price}}</div>
+        <input
+          type="text"
+          placeholder="请输入评论回车提交"
+          @keyup.enter="comentbtn"
+        />
+      </div>
+    </template>
+  </body>
+  <script>
+    const card = {
+      template: '#card',
+      props: {
+        cbooks: Object,
+      },
+      methods: {
+        comentbtn(event) {
+          //发射事件 自定义事件
+          this.cbooks.date.push(event.target.value);
+          let datas = {
+            itemss: this.cbooks.name,
+            value: event.target.value,
+          };
+          this.$emit('itemclick', datas);
+          event.target.value = '';
+        },
+      },
+    };
+    new Vue({
+      data() {
+        return {
+          books: [
+            {
+              id: 1,
+              name: '算法导论',
+              date: [],
+              price: 59.0,
+              count: 1,
+            },
+            {
+              id: 2,
+              name: '算法导论1',
+              date: [],
+              price: 32.0,
+              count: 1,
+            },
+            {
+              id: 3,
+              name: '算法导论2',
+              date: [],
+              price: 115.0,
+              count: 1,
+            },
+            {
+              id: 4,
+              name: '算法导论3',
+              date: [],
+              price: 29.0,
+              count: 1,
+            },
+            {
+              id: 5,
+              name: '算法导论4',
+              date: [],
+              price: 29.0,
+              count: 1,
+            },
+          ],
+          message: '暂无评论',
+          itemss: '',
+        };
+      },
+      components: {
+        card,
+      },
+      methods: {
+        getcoment(data) {
+          this.message = data.value;
+          this.itemss = data.itemss;
+        },
+      },
+    }).$mount('#app');
+  </script>
+</html>
