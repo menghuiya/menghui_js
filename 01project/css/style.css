@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  position: relative;
+  height: 2.25rem;
+  background-color: #4fa5d8;
+}
+header h1 {
+  font-size: 1.475rem;
+  color: #ffffff;
+  text-align: center;
+  line-height: 2.25rem;
+}
+header .showTime {
+  position: absolute;
+  top: 0em;
+  right: 0.375rem;
+  line-height: 1.9375rem;
+  color: #ffffffc7;
+  font-size: 1.25rem;
+}
+.mainbox {
+  display: flex;
+}
+.mainbox .left {
+  flex: 3;
+  background-color: #dddddd;
+}
+.mainbox .center {
+  flex: 4;
+  background-color: #915858;
+}
+.mainbox .right {
+  flex: 3;
+  background-color: #4c4ab6;
+}
