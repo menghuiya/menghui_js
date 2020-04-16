@@ -4,28 +4,92 @@
 }
 header {
   position: relative;
-  height: 2.25rem;
+  height: 1.25rem;
   background-color: #4fa5d8;
   h1 {
-    font-size: 1.475rem;
+    font-size: 0.475rem;
     color: #ffffff;
     text-align: center;
-    line-height: 2.25rem;
+    line-height: 1.25rem;
   }
   .showTime {
     position: absolute;
     top: 0em;
     right: 0.375rem;
-    line-height: 1.9375rem;
+    line-height: 0.9375rem;
     color: #ffffffc7;
-    font-size: 1.25rem;
+    font-size: 0.25rem;
   }
 }
 .mainbox {
   display: flex;
   .left {
     flex: 3;
-    background-color: #dddddd;
+    background-color: #bbd9eb;
+    .panel {
+      position: relative;
+      height: 3.875rem;
+      border: 1px solid darkred;
+      margin-top: 0.125rem;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 0.125rem;
+        height: 0.125rem;
+        border-top: 2px solid #03a9b3;
+        border-left: 2px solid #03a9b3;
+      }
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: '';
+        width: 0.125rem;
+        height: 0.125rem;
+        border-top: 2px solid #03a9b3;
+        border-right: 2px solid #03a9b3;
+      }
+      .panel_foot {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        &::before {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          content: '';
+          width: 0.125rem;
+          height: 0.125rem;
+          border-bottom: 2px solid #03a9b3;
+          border-left: 2px solid #03a9b3;
+        }
+        &::after {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          content: '';
+          width: 0.125rem;
+          height: 0.125rem;
+          border-bottom: 2px solid #03a9b3;
+          border-right: 2px solid #03a9b3;
+        }
+      }
+      h2 {
+        height: 0.6rem;
+        line-height: 0.6rem;
+        text-align: center;
+        font-size: 0.25rem;
+        font-weight: 400;
+      }
+      .chart {
+        height: 3rem;
+        width: 3rem;
+        background-color: darkslateblue;
+      }
+    }
   }
   .center {
     flex: 4;
@@ -33,6 +97,6 @@ header {
   }
   .right {
     flex: 3;
-    background-color: #4c4ab6;
+    background-color: #bbd9eb;
   }
 }
