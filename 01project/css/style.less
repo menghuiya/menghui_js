@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
 }
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
 header {
   position: relative;
   height: 1.25rem;
@@ -23,7 +30,8 @@ header {
 }
 .mainbox {
   display: flex;
-  .left {
+  overflow: hidden;
+  .datadiv {
     flex: 3;
     background-color: #bbd9eb;
     .panel {
@@ -86,14 +94,16 @@ header {
       }
       .chart {
         height: 3rem;
-        width: 3rem;
-        background-color: darkslateblue;
+        width: 7rem;
+        // background-color: darkslateblue;
+        margin: 0 auto;
       }
     }
   }
   .center {
     flex: 4;
     background-color: #915858;
+    height: 10rem;
   }
   .right {
     flex: 3;
