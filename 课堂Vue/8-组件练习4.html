@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .topmain {
+        display: flex;
+      }
+      .topmain .center {
+        flex: 1;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <script src="./vue.js"></script>
+  <body>
+    <div id="app">
+      <cpn>
+        <h2 slot="left">返回</h2>
+        <h2 slot="main" class="center">
+          <cpn1></cpn1>
+        </h2>
+        <h2 slot="right">设置</h2>
+      </cpn>
+    </div>
+    <template id="cpn">
+      <div class="topmain">
+        <slot name="left"></slot>
+        <slot name="main"></slot>
+        <slot name="right"></slot>
+      </div>
+    </template>
+    <template id="cpn1">
+      <div>
+        <span>cpn2xx</span>
+      </div>
+    </template>
+  </body>
+  <script>
+    const cpn = {
+      template: '#cpn',
+    };
+    const cpn1 = {
+      template: '#cpn1',
+    };
+    new Vue({
+      data() {
+        return {};
+      },
+      components: {
+        cpn,
+        cpn1,
+      },
+    }).$mount('#app');
+  </script>
+</html>
