@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="img/jiazai.gif" alt="" id="img1" />
+  </body>
+  <script>
+    window.onload = init;
+    function init() {
+      let img1 = document.getElementById('img1');
+      img1.addEventListener('click', change1, false);
+    }
+    function change1() {
+      let img2 = document.getElementById('img1');
+      img2.src = 'img/logo.gif';
+    }
+  </script>
+</html>
