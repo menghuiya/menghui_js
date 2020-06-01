@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="./vue.js"></script>
+  <script src="./axios.js"></script>
+  <body>
+    <div id="app">
+      <button @click="getData">点击获取数据</button>
+      <h2>标题</h2>
+      <h5>description</h5>
+      <div>内容</div>
+      <div>时间</div>
+    </div>
+  </body>
+  <script>
+    new Vue({
+      data() {
+        return {
+          datalist: [],
+        };
+      },
+      methods: {
+        getData() {
+          //get方式 用于获取数据
+          axios({
+            method: 'get',
+            url: 'http://test.wdf5.com/api/articles',
+          }).then((res) => {
+            this.datalist = res.data.data;
+            console.log(this.datalist);
+          });
+          //post 方式 用于增加数据
+          axios({
+            method: 'post',
+            url: '/api/login',
+            data: {
+              name: '贺雅玲',
+              password: '123456',
+            },
+          }).then((res) => {
+            console.log(res.data);
+          });
+        },
+      },
+    }).$mount('#app');
+  </script>
+</html>

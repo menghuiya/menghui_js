@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      #show {
+        font-size: 20px;
+        color: #ffffff;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="show"></div>
+  </body>
+  <script>
+    window.onload = () => {
+      let text = '需要展示的内容';
+      let show = document.getElementById('show');
+      let i = 0;
+      let showtext = setInterval(() => {
+        show.innerText += text.substr(i, 1);
+        i++;
+        if (text.length == i) {
+          clearInterval(showtext);
+        }
+      }, 50);
+    };
+  </script>
+</html>
