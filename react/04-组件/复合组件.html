@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      const myStyle = {
+        color: '#a21414',
+        display: 'inline-block',
+      };
+      function Name(props) {
+        return <h2>网站名称:{props.name}</h2>;
+      }
+      function Url(props) {
+        return <h2>网站地址:{props.url}</h2>;
+      }
+      function Des(props) {
+        return (
+          <div>
+            <h2 style={myStyle}>网站介绍:</h2>{' '}
+            <p style={myStyle}> {props.des}</p>
+          </div>
+        );
+      }
+      function App() {
+        return (
+          <div>
+            <Name name="梦回小程序" />
+            <Url url="www.menghui.com" />
+            <Des des="梦回小程序是一个梦回资源网邀请码发卡小程序" />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById('app'));
+    </script>
+  </body>
+</html>

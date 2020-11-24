@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <!-- componentDidMount() 与 componentWillUnmount() 方法被称作生命周期钩子。
+
+在组件输出到 DOM 后会执行 componentDidMount() 钩子，我们就可以在这个钩子上设置一个定时器。
+
+this.timerID 为定时器的 ID，我们可以在 componentWillUnmount() 钩子中卸载定时器。 -->
+  <script type="text/babel">
+    class Clock extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { date: new Date() };
+      }
+      componentDidMount() {
+        this.timerID = setInterval(() => this.tick(), this.props.times);
+      }
+      componentWillUnmount() {
+        clearInterval(this.timerID);
+      }
+      tick() {
+        this.setState({
+          date: new Date(),
+        });
+      }
+      render() {
+        return (
+          <div>
+            <h2>hello word,{this.props.times}</h2>{' '}
+            <h2>现在是 {this.state.date.toLocaleTimeString()}</h2>
+          </div>
+        );
+      }
+    }
+    function App() {
+      return (
+        <div>
+          <Clock times="1000" />
+          <Clock times="2000" />
+          <Clock times="3000" />
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, document.getElementById('app'));
+  </script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      button {
+        height: 40px;
+        width: 200px;
+      }
+      .warning {
+        background-color: green;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 14pt;
+        color: white;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script type="text/babel">
+    const WarningBanner = (props) => {
+      if (!props.warn) return null;
+      return <div className="warning">警告</div>;
+    };
+
+    class Page extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { showWarning: false };
+        this.handleToggleClick = this.handleToggleClick.bind(this);
+      }
+
+      handleToggleClick() {
+        this.setState((prevState) => ({
+          showWarning: !prevState.showWarning,
+        }));
+      }
+
+      render() {
+        return (
+          <div>
+            <button onClick={this.handleToggleClick}>
+              {this.state.showWarning ? '隐藏' : '显示'}
+            </button>
+            <WarningBanner warn={this.state.showWarning} />
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<Page />, document.getElementById('app'));
+  </script>
+</html>

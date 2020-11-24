@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="app1"></div>
+    <div id="app2"></div>
+  </body>
+  <script type="text/babel">
+    class Proper extends React.Component {
+      constructor() {
+        super();
+        this.state = { name: '梦回吖' };
+      }
+
+      perventPop(name, e) {
+        e.preventDefault();
+        alert(name);
+      }
+
+      render() {
+        return (
+          <div>
+            <p>Hello</p>
+            {/* 通过bind() 方法传递参数 */}
+            <a
+              href="https://www.52mhzy.cn"
+              onClick={this.perventPop.bind(this, this.state.name)}
+            >
+              clickme
+            </a>
+          </div>
+        );
+      }
+    }
+    ReactDOM.render(<Proper />, document.getElementById('app'));
+
+    //属性初初始化器的方式
+    class Hello extends React.Component {
+      constructor() {
+        super();
+        this.state = {
+          content: true,
+        };
+      }
+      change = () => {
+        this.setState({
+          content: !this.state.content,
+        });
+      };
+
+      render() {
+        return (
+          <div>
+            <h1>{this.state.content ? '1' : '2'}</h1>
+            <h2>{this.props.name}</h2>
+            <button onClick={this.change}>点击我呸</button>
+          </div>
+        );
+      }
+    }
+    ReactDOM.render(
+      <Hello name="梦回哈哈哈" />,
+      document.getElementById('app1')
+    );
+
+    class Test extends React.Component {
+      constructor() {
+        super();
+        this.state = {
+          conten: true,
+        };
+      }
+      change() {
+        this.setState({
+          conten: !this.state.conten,
+        });
+      }
+      render() {
+        return (
+          <div>
+            <h1>{this.state.conten ? '1' : '2'}</h1>
+            <h2>{this.props.name}</h2>
+            <button
+              onClick={() => {
+                this.change();
+              }}
+            >
+              点击我呸
+            </button>
+          </div>
+        );
+      }
+    }
+
+    ReactDOM.render(<Test />, document.getElementById('app2'));
+  </script>
+</html>

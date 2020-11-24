@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+  </body>
+  <script type="text/babel">
+    const MailBox = (props) => {
+      const useradMessages = props.useradMessages;
+      return (
+        <div>
+          <h1>hello</h1>
+          {useradMessages.length > 0 && (
+            <h2>
+              您有 <span style={{ color: 'red' }}>{useradMessages.length}</span>{' '}
+              条未读信息！
+            </h2>
+          )}
+        </div>
+      );
+    };
+    const message = ['React', 'Re:React', 'Re:Re:React'];
+    ReactDOM.render(
+      <MailBox useradMessages={message} />,
+      document.getElementById('app')
+    );
+  </script>
+</html>
