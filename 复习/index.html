@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" name="" id="txt" />
+    <span id="sp"></span>
+  </body>
+  <script>
+    const txt = document.querySelector('#txt'),
+      sp = document.querySelector('#sp'),
+      obj = {};
+    Object.defineProperty(obj, 'msg', {
+      //设置obj.msg 当obj.msg发生改变是set方法将会被调用
+      set: function (newVal) {
+        //当obj.msg被复制时 同时设置给input/span
+        txt.value = newVal;
+        sp.innerHTML = newVal;
+      },
+    });
+
+    //监听文本框的变化 当文本框输入内容时  改变obj.msg
+    txt.addEventListener('keyup', (event) => {
+      obj.msg = event.target.value;
+    });
+
+    function Observer() {
+      this.dep = [];
+
+      this.register = (fn) => {
+        this.dep.push(fn);
+      };
+
+      this.notify = () => {
+        this.dep.forEach((item) => item());
+      };
+    }
+
+    const wantCake = new Observer();
+    // 每来一个顾客就注册一个想执行的函数
+    wantCake.register(() => {
+      console.log('call daisy');
+    });
+    wantCake.register(() => {
+      console.log('call anny');
+    });
+    wantCake.register(() => {
+      console.log('call sunny');
+    });
+
+    // 最后蛋糕做好之后，通知所有的客户
+    wantCake.notify();
+  </script>
+</html>
